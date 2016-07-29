@@ -1,0 +1,635 @@
+@(message: String,totalAssetList:TotalAssets)
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="demoApp">
+<head>
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mortgage Refinance Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="@routes.Assets.at("_resources/favicon.ico")">
+<!-- <link  rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="@routes.Assets.at("_resources/bootstrap.min.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/background.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/forms.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/template.css")">
+<!--  <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  
+
+ -->
+<script src="@routes.Assets.at("_resources/ui-bootstrap-tpls.min.js")"></script>
+<script src="@routes.Assets.at("_resources/angular.min.js")"></script>
+<script src=@routes.Assets.at("_resources/bootstrap.min.js")"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap.min.js
+"></script>
+<script src="@routes.Assets.at("_resources/jquery-2.1.4.min.js")"></script>
+
+
+<script type="text/javascript">
+   function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : evt.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+   </script>
+<script type="text/javascript">
+    $.get("https://ipinfo.io", function (response) {
+        document.getElementById("ip").value=JSON.stringify(response, null, 4);
+            /* $("#ip").html("IP: " + response.ip);
+        $("#address").html("Location: " + response.city + ", " + response.region); */
+       // $("#details").html(JSON.stringify(response, null, 4));
+    }, "jsonp");
+    </script>
+    <script type="text/javascript">
+    
+	$(document).ready(function(){
+	var count=0;
+	$(".addCF").click(function(){
+		count=count+1;
+		if(count < 6){
+		$("#customFields").append('<tr valign="top"><th scope="row"></th><td width="17%"><input type="text" class="form-control" id="asset" name="asset[]" value="Vehicle" placeholder="Vehicle" readonly="readonly"/></td><td width="36%"><input type="text" class="form-control" id="description" name="description[]" value="" placeholder="description" /></td><td width="17%"><input type="number" id="value" data-type="input-number" name="value[]" placeholder="e.g. 50,000" class="form-control"/></td><td width="17%"><select name="designation[]" id="designation" class="form-control"><option value="" selected>Please Select</option><option value="Individual">Applicant First Name</option><option value="Individual">Co-Applicant First Name</option><option value="Joint">Joint</option></select></td><td><a href="javascript:void(0);" class="remCF glyphicon glyphicon-remove">Remove</a></td></tr>');
+	}else{
+		alert("Sorry!!! You can't add more than 6 Vehicle Assets.");
+	}
+	});
+    $("#customFields").on('click','.remCF',function(){
+        $(this).parent().parent().remove();
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var count=0;
+	$(".addCF2").click(function(){
+		count=count+1;
+		if(count < 6){
+		$("#customFields2").append('<tr valign="top"><th scope="row"></th><td><input type="text" class="form-control" id="asset1" name="asset1[]" value="" placeholder="Bank Account" /></td><td><input type="text" class="form-control" id="description1" name="description1[]" value="" placeholder="description" /></td><td><input type="number" id="value1" data-type="input-number" name="value1[]" placeholder="e.g. 50,000" class="form-control"/></td><td><select name="designation1[]" id="designation1" class="form-control"><option value="" selected>Please Select</option><option value="Individual">Applicant First Name</option><option value="Individual">Co-Applicant First Name</option><option value="Joint">Joint</option></select></td><td><a href="javascript:void(0);" class="remCF2 glyphicon glyphicon-remove">Remove</a></td></tr>');
+		}else{
+			alert("Sorry!!! You can't add more than 6 Bank Accounts Assets.");
+		}
+	});
+    $("#customFields2").on('click','.remCF2',function(){
+        $(this).parent().parent().remove();
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var count=0;
+	$(".addCF3").click(function(){
+		count=count+1;
+		if(count < 6){
+		$("#customFields3").append('<tr valign="top"><th scope="row"></th><td><input type="text" class="form-control" id="asset2" name="asset2[]" value="" placeholder="RRSPTSFA" /></td><td><input type="text" class="form-control" id="description2" name="description2[]" value="" placeholder="description" /></td><td><input type="number" id="value2" data-type="input-number" name="value2[]" placeholder="e.g. 50,000" class="form-control"/></td><td><select name="designation2[]" id="designation2" class="form-control"><option value="" selected>Please Select</option><option value="Individual">Applicant First Name</option><option value="Individual">Co-Applicant First Name</option><option value="Joint">Joint</option></select></td><td><a href="javascript:void(0);" class="remCF3 glyphicon glyphicon-remove">Remove</a></td></tr>');
+		}else{
+			alert("Sorry!!! You can't add more than 6 RRSP / TSFA Assets.");
+		}
+	});
+    $("#customFields3").on('click','.remCF3',function(){
+        $(this).parent().parent().remove();
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var count=0;
+	$(".addCF4").click(function(){
+		count=count+1;
+		if(count < 6){
+		$("#customFields4").append('<tr valign="top"><th scope="row"></th><td><input type="text" class="form-control" id="asset3" name="asset3[]" value="" placeholder="Investments" /></td><td><input type="text" class="form-control" id="description3" name="description3[]" value="" placeholder="description" /></td><td><input type="number" id="value3" data-type="input-number" name="value3[]" placeholder="e.g. 50,000" class="form-control"/></td><td><select name="designation3[]" id="designation3" class="form-control"><option value="" selected>Please Select</option><option value="Individual">Applicant First Name</option><option value="Individual">Co-Applicant First Name</option><option value="Joint">Joint</option></select></td><td><a href="javascript:void(0);" class="remCF4 glyphicon glyphicon-remove">Remove</a></td></tr>');
+		}else{
+			alert("Sorry!!! You can't add more than 6 Investments Assets.");
+		}
+	});
+    $("#customFields4").on('click','.remCF4',function(){
+        $(this).parent().parent().remove();
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var count=0;
+	$(".addCF5").click(function(){
+		count=count+1;
+		if(count < 6){
+		$("#customFields5").append('<tr valign="top"><th scope="row"></th><td><input type="text" class="form-control" id="asset4" name="asset4[]" value="" placeholder="Other" /></td><td><input type="text" class="form-control" id="description4" name="description4[]" value="" placeholder="description" /></td><td><input type="number" id="value4" data-type="input-number" name="value4[]" placeholder="e.g. 50,000" class="form-control"/></td><td><select name="designation4[]" id="designation4" class="form-control"><option value="" selected>Please Select</option><option value="Individual">Applicant First Name</option><option value="Individual">Co-Applicant First Name</option><option value="Joint">Joint</option></select></td><td><a href="javascript:void(0);" class="remCF5 glyphicon glyphicon-remove">Remove</a></td></tr>');
+		}else{
+			alert("Sorry!!! You can't add more than 6 Other Assets.");
+		}
+	});
+    $("#customFields5").on('click','.remCF5',function(){
+        $(this).parent().parent().remove();
+    });
+});
+</script>
+</head>
+<body>
+<div style="width: 97%;">
+	<form name="myForm" action="mortgagePage10" method="POST" onsubmit="return validateForm();">
+	
+		<div style="width: 90%">
+			<div class="row"></div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-7 container-bg text-color-blue">
+					<div style="padding-top: 50px"></div>
+					<img alt="Visdom Logo" height="90" width="260"	src="@routes.Assets.at("_resources/visdom-logo.png")" />
+					<div data-ng-app="demoApp" style="margin-left: 5% ng-init="
+						firstYear=0;firstMonth=0;totalone=36;data='true' ">
+						<div ng-controller="DemoController">
+							<input type="hidden" name="ip" value="" id="ip">
+							
+							@if(message !=null){
+							<div ng-init="asset.Vehicle=true"></div>
+							}
+							
+							<div class="form-group">
+								<label class="labelfont"> <font size="6">Assests </font></label>
+							</div>
+							<div id="text_174" class="form-html form-input-wide">
+								<p>Lenders require information about other assets to verify
+									down-payment or net worth information.</p>
+							</div>
+							<label class="labelfont">Please select all types of assets which you own. <span
+								style="color: red; font-size: 3">*</span></label><br>
+							<div class="btn-group" style="width: 100%;">
+								<label style="width: 20%;" class="btn btn-primary" ng-true-value="Vehicle" btn-checkbox="'Vehicle'" 
+									ng-change="change()" ng-model="asset.Vehicle"> Vehicle </label> 
+								<label	style="width: 20%;" class="btn btn-primary" ng-true-value="BankAccount" btn-checkbox="'BankAccount'"
+									ng-change="change()" ng-model="asset.BankAccount"> Bank Account </label>
+								 <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value="RRSPTSFA" btn-checkbox="'RRSPTSFA'" 
+								 ng-change="change()" ng-model="asset.RRSPTSFA">RRSP / TSFA </label>
+								 <br><br> 
+								<label style="width: 20%; border-radius: 5px 0px 0px 5px;" class="btn btn-primary" ng-true-value="Investments" btn-checkbox="'Investments'"
+								 ng-change="change()" ng-model="asset.Investments"> Investments </label> 
+								<label style="width: 20%" class="btn btn-primary" ng-true-value="Other" btn-checkbox="'Other'"
+								 ng-change="change()" ng-model="asset.Other"> Other </label>
+								 <label	style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value="None" btn-checkbox="'None'"
+								 ng-change="change()"	ng-model="asset.None"> None </label>
+								<div id="role1"></div>
+							</div>
+								<input type="hidden" name="assetTypes[]" value="{{assetResults}}">
+								<input type="hidden" name="Vehicle" value = {{asset.Vehicle}}	ng-required>
+								<input type="hidden" name="BankAccount" value = {{asset.BankAccount}}	ng-required>
+								<input type="hidden" name="RRSPTSFA" value = {{asset.RRSPTSFA}}	ng-required>
+								<input type="hidden" name="Investments" value={{asset.Investments}} ng-required>
+								<input type="hidden" name="Other" value={{asset.Other}}	ng-required>
+								<input type="hidden" name="None" value={{asset.None}} ng-required>
+								
+								<br><br>
+								<div ng-if="asset.Vehicle || asset.BankAccount || asset.RRSPTSFA || asset.Investments || asset.Other">
+								<table>
+									<th width="17%">Type of Asset:</th>
+									<th width="37%" style="padding-left: 3%;">Description</th>
+									<th width="17%" style="padding-left: 5%;">Value</th>
+									<th width="17%" style="padding-left: 7%;">Ownership</th>
+									<th width="13%"></th>
+								</table>
+								  <!-- <div class="row">
+								  <div class="col-sm-2" style="padding-left: 3%; padding-right: 0%;"><label>Type of Asset:</label></div>
+								  <div class="col-sm-3" style="padding-left: 3%;"><label>Description</label></div>
+								  <div class="col-sm-2" style="padding-left: 5%;"><label>Value</div>
+								  <div class="col-sm-3" style="padding-left: 3%;"><label>Ownership</label></div>
+								  </div> -->
+								</div>
+								<div ng-show="asset.Vehicle" class="form-input-wide" style="padding-bottom: 0%;">
+									<table class="form-table small-text" id="customFields" style="border-collapse: separate;  border-spacing: 0px 15px; padding-left: 0%;">
+										<th scope="row"><label for="customFieldName"></label></th>
+										@if(totalAssetList.getVehicle != null){
+										@for(assetsType <- totalAssetList.getVehicle){
+										<tr>								
+										<td width="17%"><input type="text" name="asset[]" id="asset"
+											placeholder="Vehicle" class="form-control" value=@assetsType.getAssetType readonly="readonly"></td>
+										<td width="36%"><input type="text" name="description[]"
+											placeholder="description" id="description" width="32%" class="form-control" value=@assetsType.getDescription></td>
+										<td width="17%"><input type="number" data-type="input-number" 
+											name="value[]" id="value" placeholder="e.g. 50,000" width="17%" class="form-control" value=@assetsType.getValue></td>
+										<td width="17%"><select name="designation[]"  class="form-control" >
+												<option value="" selected>Please Select</option>
+												<option value=@assetsType.getOwnership>Applicant First Name</option>
+												<option value=@assetsType.getOwnership>Co-Applicant First Name</option>
+												<option value=@assetsType.getOwnership>Joint</option>
+										</select>
+										</td>
+										
+										<td style="width: 13%;"></td>
+											}
+									}
+									</table>
+									<a href="javascript:void(0);" class="addCF glyphicon glyphicon-plus"><b>Additional</b></a>
+								
+								</div>
+								<div ng-show="asset.BankAccount" class="form-input-wide">
+									<table class="form-table small-text" id="customFields2" style="border-collapse: separate;  border-spacing: 0 10px;">
+										<tr>
+										<th scope="row"><label for="customFieldName2"></label></th>
+										<td width="17%"><input type="text" name="asset1[]"
+											placeholder="Bank Account" class="form-control" value=""></td>
+										<td width="36%"><input type="text" name="description1[]"
+											placeholder="description" class="form-control"></td>
+										<td width="17%"><input type="number" data-type="input-number"
+											name="value1[]" placeholder="50,000" class="form-control"></td>
+										<td width="17%"><select name="designation1[]" class="form-control">
+												<option value="" selected>Please Select</option>
+												<option value="Applicant First Name">Applicant
+													First Name</option>
+												<option value="Co-Applicant First Name">Co-Applicant
+													First Name</option>
+												<option value="Joint">Joint</option>
+										</select>
+										</td>
+										<td style="width: 13%;"></td>
+										</tr>
+									</table>
+									<a href="javascript:void(0);" class="addCF2 glyphicon glyphicon-plus"><b>Additional</b></a>
+								</div>
+								
+								 <div ng-show="asset.RRSPTSFA" class="form-input-wide">
+									<table class="form-table small-text" id="customFields3" style="border-collapse: separate;  border-spacing: 0 10px;">
+										<tr>
+										<th scope="row"><label for="customFieldName3"></label></th>
+										<td width="17%"><input type="text" id="asset2" name="asset2[]"
+											placeholder="RRSPTSFA" class="form-control"></td>
+										<td width="36%"><input type="text" id="description2" name="description2[]"
+											placeholder="description" class="form-control"></td>
+										<td width="17%"><input type="number" data-type="input-number"
+											name="value2[]" id="value2" placeholder="50,000" class="form-control"></td>
+										<td width="17%"><select name="designation2[]" id="designation2" class="form-control">
+												<option value="" selected>Please Select</option>
+												<option value="Applicant First Name">Applicant
+													First Name</option>
+												<option value="Co-Applicant First Name">Co-Applicant
+													First Name</option>
+												<option value="Joint">Joint</option>
+										</select>
+										</td>
+										<td style="width: 13%;"></td>
+										</tr>
+									</table>
+									<a href="javascript:void(0);" class="addCF3 glyphicon glyphicon-plus"><b>Additional</b></a>
+								</div>
+								
+								<div ng-show="asset.Investments" class="form-input-wide">
+									<table class="form-table small-text" id="customFields4" style="border-collapse: separate;  border-spacing: 0 10px;">
+										<tr>
+										<th scope="row"><label for="customFieldName4"></label></th>
+										<td width="17%"><input type="text" name="asset3[]" id="asset3" 
+											placeholder="Investments" class="form-control"></td>
+										<td width="36%"><input type="text" name="description3[]" id="description3" 
+											placeholder="description" class="form-control"></td>
+										<td width="17%"><input type="number" data-type="input-number" id="value3" 
+											name="value3[]" placeholder="500,000" class="form-control"></td>
+										<td width="17%"><select name="designation3[]" id="designation3" class="form-control">
+												<option value="" selected>Please Select</option>
+												<option value="Applicant First Name">Applicant
+													First Name</option>
+												<option value="Co-Applicant First Name">Co-Applicant
+													First Name</option>
+												<option value="Joint">Joint</option>
+										</select></td>
+										<td style="width: 13%;"></td>
+										</tr>
+									</table>
+									<a href="javascript:void(0);" class="addCF4 glyphicon glyphicon-plus"><b>Additional</b></a>
+								</div>
+								
+								<div ng-show="asset.Other" class="form-input-wide">
+									<table class="form-table small-text" id="customFields5" style="border-collapse: separate;  border-spacing: 0 10px;">
+										<tr>
+										<th scope="row"><label for="customFieldName5"></label></th>
+										<td width="17%"><input type="text" name="asset4[]" id="asset4" 
+											placeholder="Other" class="form-control"></td>
+										<td width="36%"><input type="text" name="description4[]" id="description4" 
+											placeholder="description" class="form-control"></td>
+										<td width="17%"><input type="number" data-type="input-number"
+											name="value4[]" id="value4" class="form-control"></td>
+										<td width="17%"><select name="designation4[]" id="designation4" class="form-control">
+												<option value="" selected>Please Select</option>
+												<option value="Applicant First Name">Applicant
+													First Name</option>
+												<option value="Co-Applicant First Name">Co-Applicant
+													First Name</option>
+												<option value="Joint">Joint</option>
+										</select></td>
+										<td style="width: 13%;"></td>
+										</tr>
+									</table>
+									<a href="javascript:void(0);" class="addCF5 glyphicon glyphicon-plus"><b>Additional</b></a>
+								</div>
+						</div>
+						
+						<br>
+						<div class="row" style="width: 100%;">
+								<div class="col-sm-6"
+									style="float: left; padding-left: 2%; width: 45%;">
+									<a href="mortgageBackPage9" class="btn btn-primary"
+										role="button" style="width: 50%;">Back</a>
+								</div>
+							<div class="col-sm-6" align="right" style="float: right; padding-right:5%; width: 45%;"><input type="submit" class="btn btn-primary btn-block"
+								value="Next" style="width: 50%;">
+							<div align="right" id="submiterror">
+								<font color="red"></font></div>
+					  </div>	
+					</div>
+						<br>
+						<div class="container" style="width: 70%;">
+						  <div class="progress">
+						    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+						    <label>15%</label>
+						    </div>
+						  </div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+		<br>
+	</form>
+	</div>
+
+	<script type="text/javascript">
+$(function(){
+    $('#pppp').on('click', function() {
+        alert("funct23   ");
+        var data = $("#tb tr:eq(1)").clone(true).appendTo("#tb");
+              data.find("input").val('');
+     });
+     $(document).on('click', '.remove', function() {
+         var trIndex = $(this).closest("tr").index();
+            if(trIndex>1) {
+             $(this).closest("tr").remove();
+           } else {
+             alert("Sorry!! Can't remove first row!");
+           }
+      });
+});      
+</script>
+	<script type="text/javascript">
+    $(function() {
+        $.mask.definitions['~'] = "[+-]";
+
+        $("#phonedatata").mask("999-999-9999");
+    });
+    
+</script>
+	<script type="text/javascript">
+    $(function() {
+        $.mask.definitions['~'] = "[+-]";
+
+        $("#brokerPhone").mask("999-999-9999");
+    });
+    
+</script>
+
+	<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+	<script type="text/javascript">
+ function validateForm() {
+     
+         var role =document.forms["myForm"]["role"].value;
+        
+        var role=document.forms["myForm"]["role"].value;
+        if(!role){
+            document.getElementById("role1").innerHTML="<p style=\"color:red\">Please Select Role</p>";
+            document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+            return false;
+        }else{
+            document.getElementById("role1").innerHTML="";
+
+        } 
+
+     var fname=document.forms["myForm"]["fname"].value;
+     
+
+        if(!fname){
+            document.getElementById("fname1").innerHTML="<p style=\"color:red\">FirstName Required</p>";
+            document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+            return false;
+        }else{
+            document.getElementById("fname1").innerHTML="";
+
+        } 
+        var lname=document.forms["myForm"]["lname"].value;
+         
+        if(!lname){
+            
+            document.getElementById("lname1").innerHTML="<p style=\"color:red\">LastName Required</p>";
+            document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+            return false;
+        }
+            else{
+                document.getElementById("lname1").innerHTML="";
+
+            } 
+        
+            var phone=document.forms["myForm"]["phone"].value;
+         
+        if(!phone){
+            document.getElementById("phone1").innerHTML="<p style=\"color:red\">PhoneNumber Required</p>";
+            document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+            return false;
+        }   
+        else{
+            document.getElementById("phone1").innerHTML="";
+
+        } 
+     
+        var email=document.forms["myForm"]["email"].value;
+         
+        if(!email){
+            
+            document.getElementById("email1").innerHTML="<p style=\"color:red\">Email Required</p>";
+            document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+            return false;
+        }else{
+            document.getElementById("email1").innerHTML="";
+
+        }
+     
+     
+    var x = document.forms["myForm"]["email"].value;
+    var x2 = document.forms["myForm"]["email2"].value;
+
+    var pattern=/^([a-zA-Z0-9_.-])+@@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+    if(pattern.test(x)){         
+          
+    }else{   
+        document.getElementById("email1").innerHTML="<p style=\"color:red\"> Proper Email Id Required</p>";
+        document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }
+    
+    if(pattern.test(x2)){         
+          
+    }else{   
+        document.getElementById("error").innerHTML="<p style=\"color:red\"> Proper Email Id Required</p>";
+        document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }
+    if (x  != x2) {
+document.getElementById("error").innerHTML="<p style=\"color:red\">Email have to match</p>";
+document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }else{
+        document.getElementById("error").innerHTML="";
+
+    }
+    var feeTo=document.forms["myForm"]["feeTo"].value;
+    if(!feeTo){
+        
+        document.getElementById("feeTo1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+        document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }else{
+        document.getElementById("feeTo1").innerHTML="";
+
+    }
+    //var role=document.forms["myForm"]["role"].value;
+    var company=document.forms["myForm"]["company"].value;
+
+if(!company&& role!= 'Realtor'&& feeTo=='Company'){
+        
+        document.getElementById("company1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+        document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }else{
+        document.getElementById("broker1").innerHTML="";
+
+    }
+
+var formatted_address=document.forms["myForm"]["formatted_address"].value;
+
+if(!formatted_address&& role!= 'Realtor'&& feeTo=='Company'){
+        
+        document.getElementById("formatted_address1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+        document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }else{
+        document.getElementById("formatted_address1").innerHTML="";
+
+    }
+    
+    var broker=document.forms["myForm"]["broker"].value;
+
+if(!broker&& role== 'Realtor'){
+        
+        document.getElementById("broker1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+        document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+        return false;
+    }else{
+        document.getElementById("broker1").innerHTML="";
+
+    }
+var address1=document.getElementById("geocomplete1");
+if(!address1&& role== 'Realtor'){
+    
+    document.getElementById("address1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+    document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+    return false;
+}else{
+    document.getElementById("address1").innerHTML="";
+
+}
+
+var brokerPhone=document.forms["myForm"]["brokerPhone"].value;
+
+if(!brokerPhone&& role== 'Realtor'){
+    
+    document.getElementById("brokerPhone1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+    document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+    return false;
+}else{
+    document.getElementById("brokerPhone1").innerHTML="";
+
+}
+
+var brokerMange=document.forms["myForm"]["brokerMange"].value;
+
+
+if(!brokerMange&& role== 'Realtor'){
+    
+    document.getElementById("brokerMange1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+    document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+    return false;
+}else{
+    document.getElementById("brokerMange1").innerHTML="";
+
+}
+
+var refer=document.forms["myForm"]["refer"].value;
+
+if(!refer&& role== 'Realtor'){
+    
+    document.getElementById("refer1").innerHTML="<p style=\"color:red\">This feild is Required</p>";
+    document.getElementById("submiterror").innerHTML="<p style=\"color:red\">There are errors on the form. Please fix them before continuing.</p>";
+
+    return false;
+}else{
+    document.getElementById("refer1").innerHTML="";
+
+}
+    
+ }
+    
+    </script>
+<script type="text/javascript">
+    var app = angular.module("demoApp", ['ui.bootstrap']);
+
+    app.controller('DemoController', function ($scope) {
+        init();
+        function init() {
+            $scope.newItemType = '';
+            $scope.company="";
+            $scope.change = function () {
+                console.log($scope.newItemType)
+            };
+            
+           	$scope.singleModel = 1;
+			
+			  $scope.asset = {
+					  
+				Vehicle:false,
+				BankAccount:false,
+				RRSPTSFA:false,
+				Investments:false,
+				Other:false,
+				None:false
+			  };
+				
+			  $scope.assetResults = [];
+
+			  $scope.$watchCollection('asset', function () {
+			    $scope.assetResults = [];
+			    angular.forEach($scope.asset, function (value, key) {
+			      if (value) {
+			        $scope.assetResults.push(key);
+			      }
+			    });
+			  });	
+        }
+    });
+    </script>
+    
+    
+	<script src="@routes.Assets.at("_resources/jquery.maskedinput.min.js")" type="text/javascript"></script>
+</body>
+</html>

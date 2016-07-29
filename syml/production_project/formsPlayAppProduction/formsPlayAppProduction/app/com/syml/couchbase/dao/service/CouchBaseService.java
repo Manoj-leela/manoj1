@@ -1,0 +1,104 @@
+package com.syml.couchbase.dao.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import play.Logger;
+
+import com.couchbase.client.java.Bucket;
+import com.couchbase.client.java.document.JsonDocument;
+import com.couchbase.client.java.document.json.JsonObject;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.syml.couchbase.dao.CouchbaseDaoServiceException;
+import com.syml.couchbase.dao.CouchbaseUtil;
+
+public class CouchBaseService {
+
+	public void storeDataToCouchbase(String key, Object object)
+			throws CouchbaseDaoServiceException {
+		try {
+			Logger.info("inside storeDataToCouchbase method of CouchBaseService class");
+			CouchbaseUtil couchbaseUtil = new CouchbaseUtil();
+			Bucket bucket = couchbaseUtil.getCouchbaseClusterConnection();
+
+			ObjectMapper objectMapper = new ObjectMapper();
+			String jsonData;
+
+			jsonData = objectMapper.writeValueAsString(object);
+
+			JsonObject jsonObject = JsonObject.fromJson(jsonData);
+			JsonDocument jsonDocument = JsonDocument.create(key, jsonObject);
+			bucket.upsert(jsonDocument);
+			Logger.debug("storing   data...  in couchbase done with couchbase id :"
+					+ key);
+		} catch (JsonProcessingException | CouchbaseDaoServiceException e) {
+			throw new CouchbaseDaoServiceException(
+					"error in storing data into couchbase  " + e);
+		}
+	}
+	
+	public void storeDataToCouchbase(String key, JsonObject jsonObject)
+			throws CouchbaseDaoServiceException {
+		try {
+			Logger.info("inside storeDataToCouchbase method of CouchBaseService class");
+			CouchbaseUtil couchbaseUtil = new CouchbaseUtil();
+			Bucket bucket = couchbaseUtil.getCouchbaseClusterConnection();
+
+			
+			JsonDocument jsonDocument = JsonDocument.create(key, jsonObject);
+			bucket.upsert(jsonDocument);
+			Logger.debug("storing   data...  in couchbase done with couchbase id :"
+					+ key);
+		} catch (CouchbaseDaoServiceException e) {
+			throw new CouchbaseDaoServiceException(
+					"error in storing data into couchbase  " + e);
+		}
+	}
+
+	public List<String> getReferralTriggerDataFromCouhbase(String key)
+			throws CouchbaseDaoServiceException {
+		Logger.info("inside getReferralTriggerDataFromCouhbase method of CouchBaseService class");
+		ArrayList<String> list = new ArrayList<String>();
+		String email = "";
+		String firstName = "";
+		String LastName = "";
+		String phoneNumber = "";
+		CouchbaseUtil couchbaseUtil = new CouchbaseUtil();
+		Bucket bucket = couchbaseUtil.getCouchbaseClusterConnection();
+		try {
+		JsonDocument jsonDocument = bucket.get(key);
+		JsonObject jsonObject = jsonDocument.content();
+	
+			phoneNumber = (String) jsonObject.get("partner_mobile");
+			email = (String) jsonObject.get("email_from");
+			String name = (String) jsonObject.get("name");
+			try {
+				String arString[] = name.split("_");
+				firstName = arString[0];
+				LastName = arString[1];
+			} catch (Exception e) {
+
+			}
+			list.add(phoneNumber);
+			list.add(email);
+			list.add(firstName);
+			list.add(LastName);
+		} catch (Exception e) {
+			Logger.error("error in getting the referralTriggerData  from couhbase for given key ="
+					+ key);
+		}
+return list;
+	}
+	
+	public JsonObject getCouhbaseDataByKey(String key) throws CouchbaseDaoServiceException{
+		Logger.info("inside getCouhbaseDataByKey method of CouchBaseService class");
+		CouchbaseUtil couchbaseUtil = new CouchbaseUtil();
+		Bucket bucket = couchbaseUtil.getCouchbaseClusterConnection();
+
+		JsonDocument jsonDocument = bucket.get(key);
+		JsonObject jsonObject = jsonDocument.content();
+		return jsonObject;
+	}
+
+}

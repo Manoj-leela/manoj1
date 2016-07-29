@@ -1,0 +1,295 @@
+@(uniid:String,additionalApplicants:String)
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mortgage Refinance Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="@routes.Assets.at("_resources/favicon.ico")">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js
+"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+ -->
+   <script src="@routes.Assets.at("_resources/jquery-2.1.4.min.js")"></script>
+    <script src="@routes.Assets.at("_resources/jquery.geocomplete.js")"></script>
+    <script type="text/javascript">
+    function validateForm(){
+    		var formatted_address = document.forms["myForm"]["formatted_address"].value;
+	 		if(!formatted_address){
+	 		        document.getElementById('formatted_address11111s').innerHTML="<span style='color:red'>*This field is Required.</span>";
+	 		        return false;
+	 		}else{
+		    	document.getElementById("formatted_address11111s").innerHTML="";
+		    }
+	 		
+	 		var refivalue=document.forms["myForm"]["refivalue"].value;
+ 	 		if(!refivalue){
+ 	 		        document.getElementById('input_101').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        return false;
+ 	 		}else{
+ 		    	document.getElementById("input_101").innerHTML="";
+ 		    }
+ 	 		
+ 	 		var additionalFunds=document.forms["myForm"]["additionalFunds"].value;
+ 	 		if(!additionalFunds){
+ 	 		        document.getElementById('widget_settings_46').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        return false;
+ 	 		}else{
+ 		    	document.getElementById("widget_settings_46").innerHTML="";
+ 		    }
+ 	 		
+ 	 		var buyProperty = document.forms["myForm"]["buyProperty"].value;
+ 	 		var payOffDebt = document.forms["myForm"]["payOffDebt"].value;
+	 	 	var buyInvestment = document.forms["myForm"]["buyInvestment"].value;
+	 	 	var buyVehicle = document.forms["myForm"]["buyVehicle"].value;
+	 	 	var renovate = document.forms["myForm"]["renovate"].value;
+	 	 	var refurnish = document.forms["myForm"]["refurnish"].value;
+	 	 	var vacation = document.forms["myForm"]["vacation"].value;
+ 	 		var recVehicle = document.forms["myForm"]["recVehicle"].value;
+ 	 		var other = document.forms["myForm"]["other"].value;
+ 	 		var retVal=true;
+ 	 		if(!buyProperty && !payOffDebt && !buyInvestment && !buyVehicle && !renovate && !refurnish && !vacation && !recVehicle && !other){
+ 	 		        document.getElementById('widget_settings_27').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        retVal=true;
+ 	 		}else{
+ 		    	document.getElementById("widget_settings_27").innerHTML="";
+ 		    } 
+ 		    
+ 		   var living4Financing=document.forms["myForm"]["living4Financing"].value;
+ 	 		if(!living4Financing){
+ 	 		        document.getElementById('input_203').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        return false;
+ 	 		}else{
+ 		    	document.getElementById("input_203").innerHTML="";
+ 		    }
+ 	 		
+ 			if(living4Financing == "Renter" || living4Financing == "OwnerAndRenter"){
+ 				var rentalAmount=document.forms["myForm"]["rentalAmount"].value;
+ 				if(!rentalAmount){
+ 			        document.getElementById('input_39').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 			        retVal=false;
+ 				}else{
+ 			    	document.getElementById("input_39").innerHTML="";
+ 			    }			
+ 			}	
+ 	 		
+    	return retVal;
+    }
+    </script>
+    <script>
+    
+      $(function(){
+        $("#geocomplete").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+      });
+    </script>
+     
+<!-- <script src="_resources/jquery.maskedinput.min.js" type="text/javascript"></script>
+ -->  <link rel="stylesheet" href="_resources/bootstrap.min.css">
+ <link rel="stylesheet" href="@routes.Assets.at("_resources/bootstrap.min.css")">
+<script src=@routes.Assets.at("_resources/bootstrap.min.js")"></script>  
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/background.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/forms.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/template.css")">
+</head>
+<body>
+<br>
+<br>
+<div style="width: 95%">
+
+
+		<form name="myForm" action="mortgagePage2Ref" method="POST" onsubmit="return validateForm()">
+		<input type="hidden" value="@additionalApplicants" name="additionalApplicants">
+		<div class="row"></div>
+		<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-7 container-bg text-color-blue">
+			
+		<div align="left" style="padding-bottom: 1px; margin-top: 20px; padding-left: 3%">
+			<img alt="Visdom Logo" height="65" width="210"
+				src="@routes.Assets.at("_resources/visdom-logo.png")" />
+		</div>
+		<div style="padding-top: 30px"></div>
+		<div data-ng-app="demoApp"  style="margin-left: 5%">
+		<div ng-controller="DemoController" ng-init="isDisabled = false">
+		<div class="map_canvas"></div>
+			      <div class="form-group">
+								<label class="labelfont">What is the address of the property you are financing?<span
+									style="color: red; font-size: 3">*</span> </label> <input
+									id="geocomplete" type="text" name="formatted_address" style="width: 60%;"
+									class="form-control" placeholder="Enter Location"  ng-required>
+									
+										<div id="formatted_address11111s"> </div>
+		    	</div>
+		 
+		<label class="labelfont"> What is the approximate market value of your property  <span style="color: red; font-size: 3">*</span></label>
+          		  <input type="number" style="width: 25%;" size="12" placeholder="eg $30,000"
+					name="refivalue" value="" class="form-control" data-type="input-number">
+					<div id="input_101"> </div>
+					<br>
+		   	  <label class="labelfont">How much additional money would you like over and above your current mortgage amount?<span style="color: red; font-size: 3">*</span></label>
+	      			<input type="number" style="width: 25%;" size="12"  placeholder="eg $30,000"
+					name="additionalFunds" value="" class="form-control" data-type="input-number">
+					<div id="widget_settings_46"> </div> 
+					<br>
+			<label class="labelfont">How will additional funds will be used?<span style="color: red; font-size: 3">*</span></label><br>
+			<div class="btn-group" style="width: 100%;">
+                            <label style="width: 20%;" class="btn btn-primary" ng-true-value="BuyProperty" btn-checkbox=="'BuyProperty'"
+                                ng-change="change()"  ng-model="BuyProperty"> Buy Property
+                            </label>
+                             <label style="width: 20%;" class="btn btn-primary" ng-true-value="PayOffDebt" btn-checkbox=="'PayOffDebt'"
+                                ng-change="change()"  ng-model="PayOffDebt"> Pay Off Debt
+                            </label>
+                            
+                             <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value ="BuyInvestment" btn-checkbox=="'BuyInvestment'"
+                                ng-change="change()"  ng-model="BuyInvestment"> Buy Investment
+                            </label>
+                            <br>
+                            <br>
+                            <label style="width: 20%; border-radius: 5px 0px 0px 5px;" class="btn btn-primary" ng-true-value="BuyVehicle" btn-checkbox="'BuyVehicle'"
+                                ng-change="change()"  ng-model="BuyVehicle"> Buy Vehicle
+                            </label>
+                            <label style="width: 20%;" class="btn btn-primary" ng-true-value="Renovate" btn-checkbox="'Renovate'"
+                                ng-change="change()"  ng-model="Renovate"> Renovate
+                            </label>
+                            <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value="Refurnish" btn-checkbox="'Refurnish'"
+                                ng-change="change()"  ng-model="Refurnish"> Refurnish
+                            </label>
+                           <br> 
+                            <br>
+                            <label style="width: 20%; border-radius: 5px 0px 0px 5px;" class="btn btn-primary" ng-true-value="Vacation" btn-checkbox="'Vacation'"
+                                ng-change="change()"  ng-model="Vacation"> Vacation
+                            </label>
+                            <label style="width: 20%;" class="btn btn-primary" ng-true-value="RecVehicle" btn-checkbox="'RecVehicle'"
+                                ng-change="change()"  ng-model="RecVehicle"> Rec Vehicle
+                            </label>
+                            <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value="Other" btn-checkbox="'Other'"
+                                ng-change="change()"  ng-model="Other"> Other
+                            </label>
+                </div>
+                 <div id="widget_settings_27" style="position: absolute;"> </div>
+                 <input type="hidden" name="buyProperty" value="{{BuyProperty}}" ></input>
+                 <input type="hidden" name="payOffDebt" value="{{PayOffDebt}}" ></input>
+                 <input type="hidden" name="buyInvestment" value="{{BuyInvestment}}" ></input>
+                 <input type="hidden" name="buyVehicle" value="{{BuyVehicle}}" ></input>
+                 <input type="hidden" name="renovate" value="{{Renovate}}" ></input>
+                 <input type="hidden" name="refurnish" value="{{Refurnish}}" ></input>
+                 <input type="hidden" name="vacation" value="{{Vacation}}" ></input>
+                 <input type="hidden" name="recVehicle" value="{{RecVehicle}}" ></input>
+                 <input type="hidden" name="other" value="{{Other}}" ></input>
+				 <br>
+			 <br>	 
+      	       <label class="labelfont">Who will be living in the property you will be financing?<span style="color: red; font-size: 3">*</span></label><br>
+	        	<div class="btn-group" style="width: 100%;">
+              		<label style="width: 20%;" class="btn btn-primary" btn-radio="'OwnerMyself'"
+                      ng-change="change()"  ng-model="newItemType3"> Owner(Myself)
+              		</label>              
+              		<label style="width: 20%;" class="btn btn-primary" btn-radio="'Renter'"
+                       ng-change="change()"  ng-model="newItemType3"> Renter
+		      		</label>
+              		<label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" btn-radio="'OwnerAndRenter'"
+                      ng-change="change()"  ng-model="newItemType3"> Owner & Renter
+              		</label>
+              		
+              		<input type="hidden" name="living4Financing" value="{{newItemType3}}" ></input>
+              		
+           		</div>
+           		<div id="input_203" style="position: absolute;"> </div>
+           		<div ng-if="newItemType3 == 'OwnerAndRenter' || newItemType3 == 'Renter'">
+						<br>
+						<label class="labelfont">What is the MONTHLY rent you expect to receive from this property?<span style="color: red; font-size: 3">*</span></label>
+							<input type="number" style="width: 33%" size="12" id="input_394" placeholder="e.g. 3000"
+								name="rentalAmount" value="" class="form-control" data-type="input-number">		
+	        				<div id="input_39"> </div>
+	        					<br>
+           		
+					</div>
+           	
+        	</div>
+	        <br>
+	        		<div class="row" style="width: 100%;">
+					  <div class="col-sm-6" style="float: left; padding-left:2%; width: 50%;">
+					  		<a href="mortgageBackPage1" class="btn btn-primary" role="button" style=" width: 50%;">Back</a>
+					  </div>
+					  <div class="col-sm-6" align="right" style="float: right; padding-right:5%; width: 50%;"><input type="submit" class="btn btn-primary btn-block"
+								value="Next" style="width: 50%;">
+							<div align="right" id="submiterror">
+								<font color="red"></font></div>
+					  </div>	
+					</div>
+				</div>
+						<br>
+						<div class="container" style="width: 70%;">
+						  <div class="progress">
+						    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+						    <label>15%</label>
+						    </div>
+						  </div>
+						</div>
+					 </div>
+				</div>
+				</div>
+				<br>
+				
+</form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $.mask.definitions['~'] = "[+-]";
+
+        $("#phonedatata").mask("999-999-9999");
+    });
+	
+</script>
+
+ <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+ 
+    <script src="jquery.geocomplete.js"></script>
+    <script>
+      $(function(){
+        $("#geocomplete").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+      });
+    </script>
+    
+    <script type="text/javascript">
+    var app = angular.module("demoApp", ['ui.bootstrap']);
+
+    app.controller('DemoController', function ($scope) {
+        init();
+        function init() {
+            $scope.newItemType = '';
+            $scope.company="";
+            $scope.change = function () {
+                console.log($scope.newItemType)
+            };
+        }
+    });
+    </script>
+<script src="@routes.Assets.at("_resources/jquery.maskedinput.min.js")" type="text/javascript"></script>
+</body>
+</html>

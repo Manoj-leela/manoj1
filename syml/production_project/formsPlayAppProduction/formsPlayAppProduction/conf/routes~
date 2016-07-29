@@ -1,0 +1,98 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+#lead creation routes start from here ----------------------------------
+
+
+GET     /clientref                    controllers.Application.indexNotVedio()
+
+GET     /clientrefV                     controllers.Application.indexV()
+
+POST     /leadcreation                           controllers.Application.submitReferral()
+
+
+POST     /leadcreationV                           controllers.Application.submitReferralV()
+
+#lead creation routes end here ----------------
+
+#referral resoursce routes start here ------------------
+
+
+GET   /referal             		 controllers.VisdomReferral.referral()
+	
+GET   /referalV           		  controllers.VisdomReferral.referralV()
+
+GET   /wfg           		  controllers.VisdomReferral.wfg()
+GET   /wfgv           		  controllers.VisdomReferral.wfgV()
+
+GET   /realtor             		 controllers.VisdomReferral.realtor()
+
+GET   /realtorV             	 controllers.VisdomReferral.realtorV()
+
+GET   /professional          	 controllers.VisdomReferral.professional()
+
+GET   /professionalV     	     controllers.VisdomReferral.professionalV()
+
+GET   /planner             		controllers.VisdomReferral.planner()
+
+GET   /plannerV              	controllers.VisdomReferral.plannerV()
+
+GET   /client              		controllers.VisdomReferral.client()
+
+GET   /clientV              	controllers.VisdomReferral.clientV()
+
+
+POST   /referal1              	controllers.VisdomReferral.visdomReferral()
+POST  /referral2     			controllers.VisdomReferral.visdomReferralForm2()
+
+
+POST   /wfg1           		  controllers.VisdomReferral.wfg1()
+
+POST   /wfg2           		  controllers.VisdomReferral.wfg2()
+
+
+
+
+GET /bookmark     controllers.VisdomReferral.bookmark()
+#referr resoursce routing ends here ------------------------------
+
+
+
+
+
+
+GET /mortgagePage1     			controllers.Mortgage.mortgagePage1()
+GET /mortgagePage1a     		controllers.Mortgage.mortgagePage1a()
+GET /mortgagePage1b     		controllers.Mortgage.mortgagePage1b()
+GET /mortgagePage3     			controllers.Mortgage.mortgagePage3()
+GET /mortgagePage2Ref  			controllers.Mortgage.mortgagePage2Ref()
+GET /mortgagePage2Pre  			controllers.Mortgage.mortgagePage2Pre()
+GET /mortgagePage2Pur  			controllers.Mortgage.mortgagePage2Pur()
+GET /mortgagePage4				controllers.Mortgage.mortgagePage4()
+GET /mortgagePage5     			controllers.Mortgage.mortgagePage5()
+GET /mortgagePage5a    			controllers.Mortgage.mortgagePage5a()
+GET /mortgagePage5b    			controllers.Mortgage.mortgagePage5b()
+GET /mortgagePage6     			controllers.Mortgage.mortgagePage6()
+GET /mortgagePage61     		controllers.Mortgage.mortgagePage6Updated()
+GET /mortgagePage6a     		controllers.Mortgage.mortgagePage6a()
+GET /mortgagePage6b     		controllers.Mortgage.mortgagePage6b()
+GET /mortgagePage7     			controllers.Mortgage.mortgagePage7()
+GET /mortgagePage7a     		controllers.Mortgage.mortgagePage7a()
+GET /mortgagePage7b     		controllers.Mortgage.mortgagePage7b()
+GET /mortgagePage8     			controllers.Mortgage.mortgagePage8()
+GET /mortgagePage9 	    		controllers.Mortgage.mortgagePage9()
+GET /mortgagePage10     		controllers.Mortgage.mortgagePage10Assets()
+GET /mortgagePage11     		controllers.Mortgage.mortgagePage11Properties()
+GET /mortgagePage12     		controllers.Mortgage.mortgagePage12()
+GET /mortgagePage1test   		controllers.Mortgage.mortgagePage1Test()
+
+GET /test				   		controllers.Mortgage.mortgagePageExtra1a()
+GET /test1b				   		controllers.Mortgage.mortgagePage11()

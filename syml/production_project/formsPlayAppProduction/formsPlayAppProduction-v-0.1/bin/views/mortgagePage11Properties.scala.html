@@ -1,0 +1,1981 @@
+@(howManyProperty: String,applicantName:String,coApplicantName:String,propertyList:List[Property] )
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mortgage Application Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="shortcut icon" href="@routes.Assets.at("_resources/favicon.ico")">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js
+"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+ -->
+   <script src="@routes.Assets.at("_resources/jquery-2.1.4.min.js")"></script>
+    <script src="@routes.Assets.at("_resources/jquery.geocomplete.js")"></script>
+    <style type="text/css">
+	.verticalLine {
+	height: 300px;
+    border-left: medium groove #336699;
+	}
+	.inline{
+	display: inline;
+	}
+	
+	/*for bigger checkbox*/
+*,*:after,*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+}
+
+
+.switch input {
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* DEMO 3 */
+
+.switch.demo3 {
+  width: 50px;
+  height: 30px;
+}
+
+ .switch.demo3 label {
+  display: block;
+  width: 90%;
+  height: 100%;
+  background: #ffffff;
+  /* for button like look of checkbox */
+  /* background: black; */ /* For browsers that do not support gradients */    
+  /* background: -webkit-radial-gradient(red, yellow, green); */ /* Safari 5.1 to 6.0 */
+  /* background: -o-radial-gradient(red, yellow, green); */ /* For Opera 11.6 to 12.0 */
+  /* background: -moz-radial-gradient(red, yellow, green); */ /* For Firefox 3.6 to 15 */
+  /* background: radial-gradient(#666699, #f2f2f2, #669999); */ /* Standard syntax (must be last) */
+ /*  box-shadow:
+      inset 0 3px 8px 1px rgba(0,0,0,0.2),
+      0 1px 0 rgba(255,255,255,0.5); */
+} 
+
+.switch.demo3 label:after {
+  content: "";
+  position: absolute;
+  top: -8px; right: -8px; bottom: 0px; left: -8px;
+}
+
+.switch.demo3 label:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -18px; right: -18px; bottom: -18px; left: -18px;
+  s
+}
+
+
+.switch.demo3 input:checked ~ label i:before {
+  content: url("@routes.Assets.at("_resources/tick1.png")");   
+   
+  /* content: url("@routes.Assets.at("_resources/tick2.gif")"); */
+  color:#ffffff;
+}
+
+
+</style>
+<script language="JavaScript">
+
+        window.onbeforeunload = function () {
+            return "Are you sure?";
+        };
+
+        $(document).ready(function () {
+            $('form').submit(function () {
+                window.onbeforeunload = null;
+            });
+        });
+    </script>
+<script type="text/javascript">
+    window.onload = function() {
+    	SelectElement();
+    };
+    function SelectElement() {   
+        var ownership123 = document.forms["myForm"]["ownership12"].value;  
+        document.forms["myForm"]["ownership1"].value=ownership123;
+    }
+    </script>
+
+<script type="text/javascript">
+	function validateForm(){
+		var howManyProperties111 = document.forms["myForm"]["howManyProperties"].value;
+		if(howManyProperties111 == "dummy" || !howManyProperties111){
+    	    document.getElementById('role1').innerHTML="<span style='color:red'>*This field is Required.</span>";
+        	return false;
+		}else{
+		document.getElementById("role1").innerHTML="";
+		}
+		
+		if(howManyProperties111 == "one"){
+					
+			var address111 = document.forms["myForm"]["address0"].value;
+			if(!address111){
+			        document.getElementById('input_200211').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_200211").innerHTML="";
+	    	}
+
+			var appxValue111 = document.forms["myForm"]["appxValue1"].value;
+			if(!appxValue111){
+			        document.getElementById('input_200212').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_200212").innerHTML="";
+	    	}
+			var  mortgage1 =document.forms["myForm"]["mortgage1"].value;
+			if(!mortgage1){
+		        document.getElementById('input_200_212').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    	document.getElementById("input_200_212").innerHTML="";
+    	}
+			var rentMo1 =document.forms["myForm"]["rentMo1"].value;
+			if(!rentMo1){
+		        document.getElementById('input_200_213').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    	document.getElementById("input_200_213").innerHTML="";
+    	}
+	var condoFees1 =document.forms["myForm"]["condoFees1"].value;
+	if(!condoFees1){
+        document.getElementById('input_200_214').innerHTML="<span style='color:red'>*This field is Required.</span>";
+        return false;
+}else{
+document.getElementById("input_200_214").innerHTML="";
+}	
+			var ownership111 = document.forms["myForm"]["ownership1"].value;
+			if(!ownership111){
+			        document.getElementById('input_200213').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_200213").innerHTML="";
+	    	}
+		
+		}
+		
+		if(howManyProperties111 == "two"){
+			
+			var currentAddress211 = document.forms["myForm"]["currentAddress21"].value;
+			if(!currentAddress211){
+			        document.getElementById('input_2001').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2001").innerHTML="";
+	    	}
+
+			var appxValue211 = document.forms["myForm"]["appxValue21"].value;
+			if(!appxValue211){
+			        document.getElementById('input_200111').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_200111").innerHTML="";
+	    	}
+			//changes here 
+			var mortgage21 = document.forms["myForm"]["mortgage21"].value;
+			if(!mortgage21){
+			        document.getElementById('input_101').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_101").innerHTML="";
+	    	}
+			var rentMo21 = document.forms["myForm"]["rentMo21"].value;
+			if(!rentMo21){
+			        document.getElementById('input_102').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_102").innerHTML="";
+	    	}
+			
+			var condoFees21 = document.forms["myForm"]["condoFees21"].value;
+			if(!condoFees21){
+		        document.getElementById('input_103').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    	document.getElementById("input_103").innerHTML="";
+    	}
+			
+			
+			//end here
+			var ownership211 = document.forms["myForm"]["ownership21"].value;
+			if(!ownership211){
+			        document.getElementById('input_701').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_701").innerHTML="";
+	    	}
+			
+			var currentAddress221 = document.forms["myForm"]["currentAddress22"].value;
+			if(!currentAddress221){
+			        document.getElementById('input_2002').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2002").innerHTML="";
+	    	}
+
+			var appxValue221 = document.forms["myForm"]["appxValue22"].value;
+			if(!appxValue221){
+			        document.getElementById('input_20022').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20022").innerHTML="";
+	    	}
+			var mortgage22 = document.forms["myForm"]["mortgage22"].value;
+			if(!mortgage22){
+			        document.getElementById('input_104').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_104").innerHTML="";
+	    	}
+			var rentMo22 = document.forms["myForm"]["rentMo22"].value;
+			if(!rentMo22){
+			        document.getElementById('input_105').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_105").innerHTML="";
+	    	}
+			
+			var condoFees22 = document.forms["myForm"]["condoFees22"].value;
+			if(!condoFees22){
+			        document.getElementById('input_106').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_106").innerHTML="";
+	    	}
+			var ownership221 = document.forms["myForm"]["ownership22"].value;
+			if(!ownership221){
+			        document.getElementById('input_20012').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20012").innerHTML="";
+	    	}
+			
+		}
+		
+		if(howManyProperties111 == "three"){
+			var currentAddress311 = document.forms["myForm"]["currentAddress31"].value;
+			if(!currentAddress311){
+			        document.getElementById('input_20011').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20011").innerHTML="";
+	    	}
+			 
+			var appxValue311 = document.forms["myForm"]["appxValue31"].value;
+			if(!appxValue311){
+			        document.getElementById('input_200131').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_200131").innerHTML="";
+	    	}
+			 //changes here 
+			
+			 var mortgage31 = document.forms["myForm"]["mortgage31"].value;
+				if(!mortgage31){
+				        document.getElementById('mort_31').innerHTML="<span style='color:red'>*This field is Required.</span>";
+				        return false;
+				}else{
+		    	document.getElementById("mort_31").innerHTML="";
+		    	}
+				
+				 var rentMo31 = document.forms["myForm"]["rentMo31"].value;
+					if(!rentMo31){
+					        document.getElementById('rentMo_31').innerHTML="<span style='color:red'>*This field is Required.</span>";
+					        return false;
+					}else{
+			    	document.getElementById("rentMo_31").innerHTML="";
+			    	}
+					
+					 var condoFees31 = document.forms["myForm"]["condoFees31"].value;
+						if(!condoFees31){
+						        document.getElementById('condoFees_31').innerHTML="<span style='color:red'>*This field is Required.</span>";
+						        return false;
+						}else{
+				    	document.getElementById("condoFees_31").innerHTML="";
+				    	}
+				
+						
+								
+			 //end here
+			var ownership311 = document.forms["myForm"]["ownership31"].value;
+			if(!ownership311){
+			        document.getElementById('input_200132').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_200132").innerHTML="";
+	    	}
+			
+			var currentAddress321 = document.forms["myForm"]["currentAddress32"].value;
+			if(!currentAddress321){
+			        document.getElementById('input_203211').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_203211").innerHTML="";
+	    	}
+			 
+			var appxValue321 = document.forms["myForm"]["appxValue32"].value;
+			if(!appxValue321){
+			        document.getElementById('input_203212').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_203212").innerHTML="";
+	    	}
+			 	
+			 var mortgage32 = document.forms["myForm"]["mortgage32"].value;
+				if(!mortgage32){
+				        document.getElementById('mortgage_32').innerHTML="<span style='color:red'>*This field is Required.</span>";
+				        return false;
+				}else{
+		    	document.getElementById("mortgage_32").innerHTML="";
+		    	}
+				
+				 var rentMo32 = document.forms["myForm"]["rentMo32"].value;
+					if(!rentMo32){
+					        document.getElementById('rentMo_32').innerHTML="<span style='color:red'>*This field is Required.</span>";
+					        return false;
+					}else{
+			    	document.getElementById("rentMo_32").innerHTML="";
+			    	}
+				
+					 var condoFees32 = document.forms["myForm"]["condoFees32"].value;
+						if(!condoFees32){
+						        document.getElementById('condoFees_32').innerHTML="<span style='color:red'>*This field is Required.</span>";
+						        return false;
+						}else{
+				    	document.getElementById("condoFees_32").innerHTML="";
+				    	}	
+			var ownership321 = document.forms["myForm"]["ownership32"].value;
+			if(!ownership321){
+			        document.getElementById('input_203214').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_203214").innerHTML="";
+	    	}
+			
+			var currentAddress331 = document.forms["myForm"]["currentAddress33"].value;
+			if(!currentAddress331){
+			        document.getElementById('input_2043').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2043").innerHTML="";
+	    	}
+			 
+			var appxValue331 = document.forms["myForm"]["appxValue33"].value;
+			if(!appxValue331){
+			        document.getElementById('input_2044').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2044").innerHTML="";
+	    	}
+			var mortgage33 = document.forms["myForm"]["mortgage33"].value;
+			if(!mortgage33){
+			        document.getElementById('mortgage_33').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("mortgage_33").innerHTML="";
+	    	}
+			var rentMo33 = document.forms["myForm"]["rentMo33"].value;
+			if(!rentMo33){
+			        document.getElementById('rentMo_33').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("rentMo_33").innerHTML="";
+	    	}
+			var condoFees33 = document.forms["myForm"]["condoFees33"].value;
+			if(!condoFees33){
+			        document.getElementById('condoFees_33').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("condoFees_33").innerHTML="";
+	    	}
+						
+			var ownership331 = document.forms["myForm"]["ownership33"].value;
+			if(!ownership331){
+			        document.getElementById('input_2045').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2045").innerHTML="";
+	    	}
+			
+		}
+		
+		if(howManyProperties111 == "four"){
+			
+			var currentAddress412 = document.forms["myForm"]["currentAddress41"].value;
+			if(!currentAddress412){
+			        document.getElementById('input_2032e11ww1s1').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2032e11ww1s1").innerHTML="";
+	    	}
+
+			var appxValue412 = document.forms["myForm"]["appxValue41"].value;
+			if(!appxValue412){
+			        document.getElementById('input_2032').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2032").innerHTML="";
+	    	}
+				//changes here 1
+				var mortgage41 = document.forms["myForm"]["mortgage41"].value;
+			if(!mortgage41){
+			        document.getElementById('mortgage_41').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("mortgage_41").innerHTML="";
+	    	}
+			var rentMo41 = document.forms["myForm"]["rentMo41"].value;
+			if(!rentMo41){
+			        document.getElementById('rentMo_41').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("rentMo_41").innerHTML="";
+	    	}
+			var condoFees41 = document.forms["myForm"]["condoFees41"].value;
+			if(!condoFees41){
+			        document.getElementById('condoFees_41').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("condoFees_41").innerHTML="";
+	    	}
+				
+				
+				
+				//end here
+			var ownership411 = document.forms["myForm"]["ownership41"].value;
+			
+			if(!ownership411){
+			        document.getElementById('input_2033').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2033").innerHTML="";
+	    	}
+			
+			var currentAddress422 = document.forms["myForm"]["currentAddress42"].value;
+			if(!currentAddress422){
+			        document.getElementById('input_2212').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2212").innerHTML="";
+	    	}
+
+			var appxValue422 = document.forms["myForm"]["appxValue42"].value;
+			if(!appxValue422){
+			        document.getElementById('input_20322').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20322").innerHTML="";
+	    	}
+				// changes here 2
+					var mortgage42 = document.forms["myForm"]["mortgage42"].value;
+			if(!mortgage42){
+			        document.getElementById('mortgage_42').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("mortgage_42").innerHTML="";
+	    	}
+			
+			var rentMo42 = document.forms["myForm"]["mortgage42"].value;
+			if(!rentMo42){
+			        document.getElementById('rentMo_42').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("rentMo_42").innerHTML="";
+	    	}
+			var condoFees42 = document.forms["myForm"]["condoFees42"].value;
+			if(!condoFees42){
+			        document.getElementById('condoFees_42').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("condoFees_42").innerHTML="";
+	    	}
+				
+				
+				
+				// end here
+			var ownership4221 = document.forms["myForm"]["ownership42"].value;
+			if(!ownership4221){
+			        document.getElementById('input_20323').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20323").innerHTML="";
+	    	}
+			
+			var currentAddress431 = document.forms["myForm"]["currentAddress43"].value;
+			if(!currentAddress431){
+			        document.getElementById('input_20121').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20121").innerHTML="";
+	    	}
+
+			var appxValue432 = document.forms["myForm"]["appxValue43"].value;
+			if(!appxValue432){
+			        document.getElementById('input_201212').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_201212").innerHTML="";
+	    	}
+			//chagnes here 3 
+			var mortgage43 = document.forms["myForm"]["mortgage43"].value;
+			if(!mortgage43){
+			        document.getElementById('mortgage_43').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("mortgage_43").innerHTML="";
+	    	}
+			var rentMo43 = document.forms["myForm"]["rentMo43"].value;
+			if(!rentMo43){
+			        document.getElementById('rentMo_43').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("rentMo_43").innerHTML="";
+	    	}
+			
+			var condoFees43 = document.forms["myForm"]["condoFees43"].value;
+			if(!condoFees43){
+			        document.getElementById('condoFees_43').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("condoFees_43").innerHTML="";
+	    	}
+				
+				
+				
+				
+				//end here
+			var ownership431 = document.forms["myForm"]["ownership43"].value;
+			if(!ownership431){
+			        document.getElementById('input_201213').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_201213").innerHTML="";
+	    	}
+			
+			var currentAddress441 = document.forms["myForm"]["currentAddress44"].value;
+			if(!currentAddress441){
+			        document.getElementById('input_2032121').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_2032121").innerHTML="";
+	    	}
+
+			var appxValue441 = document.forms["myForm"]["appxValue44"].value;
+			if(!appxValue441){
+			        document.getElementById('input_20212').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20212").innerHTML="";
+	    	}
+					//changes here 4 
+					var mortgage44 = document.forms["myForm"]["mortgage44"].value;
+			if(!mortgage44){
+			        document.getElementById('mortgage_44').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("mortgage_44").innerHTML="";
+	    	}
+			var rentMo44 = document.forms["myForm"]["rentMo44"].value;
+			if(!rentMo44){
+			        document.getElementById('rentMo_44').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("rentMo_44").innerHTML="";
+	    	}
+			
+			
+			var condoFees44 = document.forms["myForm"]["condoFees44"].value;
+			if(!condoFees44){
+			        document.getElementById('condoFees_44').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("condoFees_44").innerHTML="";
+	    	}
+				
+					
+					
+					
+					// end here
+			var ownership441 = document.forms["myForm"]["ownership44"].value;
+			if(!ownership441){
+			        document.getElementById('input_20213').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+	    	document.getElementById("input_20213").innerHTML="";
+	    	}
+			
+		}
+		
+		return true;	
+	}
+</script>
+<script>
+      $(function(){
+    	  $("#geocomplete0").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete0").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });   
+      });
+    </script>
+    <script>
+      $(function(){
+    	$("#geocomplete71").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete71").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });   
+      });
+    </script>
+    
+     <script>
+      $(function(){
+    	  $("#geocomplete72").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete72").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });
+      });
+      
+    </script>
+    <script>
+      $(function(){
+    	$("#geocomplete2").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete2").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });
+      });
+    </script>
+    <script>
+      $(function(){
+    	  $("#geocomplete3").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete3").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    }); 
+      });
+    </script>
+	 <script>
+      $(function(){
+    	$("#geocomplete4").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete4").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });  
+      });
+    </script>
+     <script>
+      $(function(){
+    	  $("#geocomplete41").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete41").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });  
+      });
+    </script>
+    <script>
+      $(function(){
+    	$("#geocomplete42").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete42").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });    
+      });
+    </script>
+    <script>
+      $(function(){
+    	  $("#geocomplete43").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete43").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });
+      });
+    </script>
+    <script>
+      $(function(){
+    	$("#geocomplete44").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete44").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });  
+      });
+    </script>
+    
+       <script>
+      $(function(){
+    	  $("#geocomplete51").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete51").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    }); 
+      });
+    </script>
+    <script>
+      $(function(){
+      $("#geocomplete52").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete52").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });  
+      });
+    </script>
+    
+     <script>
+      $(function(){
+    	  $("#geocomplete53").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete53").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });  
+      });
+    </script>
+     <script>
+      $(function(){
+      $("#geocomplete54").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete54").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });  
+      });
+    </script>
+     <script>
+      $(function(){
+    	  $("#geocomplete55").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete55").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });  
+      });
+    </script>
+     <script>
+      $(function(){
+      $("#geocomplete56").geocomplete({
+  	        types:["geocode", "establishment"]
+  	    })
+  	    .bind("geocode:result", function (event, result) {
+  	        //$.log("Result: " + result.formatted_address);
+  	        //alert("Result: " + result.formatted_address);
+  	    	document.getElementById("geocomplete56").value = result.formatted_address;
+  	    })
+  	    .bind("geocode:error", function (event, status) {
+  	        alert("ERROR: " + status);
+  	    })
+  	    .bind("geocode:multiple", function (event, results) {
+  	       alert("Multiple: " + results.length + " results found");
+  	    });  
+      });
+    </script>
+     <script>
+      $(function(){
+    	  $("#geocomplete57").geocomplete({
+    	        types:["geocode", "establishment"]
+    	    })
+    	    .bind("geocode:result", function (event, result) {
+    	        //$.log("Result: " + result.formatted_address);
+    	        //alert("Result: " + result.formatted_address);
+    	    	document.getElementById("geocomplete57").value = result.formatted_address;
+    	    })
+    	    .bind("geocode:error", function (event, status) {
+    	        alert("ERROR: " + status);
+    	    })
+    	    .bind("geocode:multiple", function (event, results) {
+    	       alert("Multiple: " + results.length + " results found");
+    	    });  
+      });
+    </script>
+    <script>
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        	 alert("Please enter a number (no comma or dash)");
+            return false;
+        }
+        return true;
+    }
+    </script>
+<!-- <script src="_resources/jquery.maskedinput.min.js" type="text/javascript"></script>
+ -->  
+ <link rel="stylesheet" href="_resources/bootstrap.min.css">
+ <link rel="stylesheet" href="@routes.Assets.at("_resources/bootstrap.min.css")">
+<script src=@routes.Assets.at("_resources/bootstrap.min.js")"></script>  
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/background.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/forms.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/template.css")">
+</head>
+<body>
+<br>
+<br>
+<div style="width: 97%">
+			
+		<form name="myForm" action="mortgagePage11" method="POST" onsubmit="return validateForm()">
+		<input type="hidden" value="@howManyProperty" name="howManyProperties123">
+		
+		<input type="hidden" value="@applicantName" name="applicantName33">
+		<input type="hidden" value="@coApplicantName" name="coApplicantName33">
+		
+		
+		<input type="hidden" value="uniid" name="uniid">
+		<div class="row"></div>
+		<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 container-bg text-color-blue">
+			
+		<div align="left" style="padding-bottom: 1px; margin-top: 20px; padding-left: 1%">
+			<img alt="Visdom Logo" height="65" width="210"
+				src="@routes.Assets.at("_resources/visdom-logo.png")" />
+		</div>
+		<div style="padding-top: 50px"></div>
+		<div data-ng-app="demoApp"  style="margin-left: 4%">
+		<div ng-controller="DemoController" ng-init="isDisabled = false;listLength=@propertyList.length"  >
+		
+							<div class="form-group">
+								<label> <font size="6">Properties </font></label>
+
+							</div>
+							<div id="cid_174" class="form-input-wide">
+								<div id="text_174" class="form-html">
+									<p>Lenders require information about additional properties to verify (e.g. Rental Properties) your application. In the Event you own additional properties (beyond the one you are seeking to finance in this application) please list them below.</p>
+										
+								</div>
+							</div>
+							<br>
+								<label class="labelfont">How many properties do you own?<span
+									style="color: red; font-size: 3">*</span></label><br>
+								<div class="btn-group" style="width: 100%;">
+								<label style="width: 20%; border-style: groove;"
+									class="btn btn-primary " btn-radio="'one'"
+									ng-change="change()" ng-model="noOfProperty"> One </label> <label
+									style="width: 20%; border-style: groove;"
+									class="btn btn-primary full " btn-radio="'two'"
+									ng-change="change()" ng-model="noOfProperty"> Two
+									</label><label
+									style="width: 20%; border-radius: 0px 5px 5px 0px; border-style: groove;"
+									class="btn btn-primary " btn-radio="'three'"
+									ng-change="change()" ng-model="noOfProperty"> Three
+
+								</label><br><br><label style="width: 20%; border-style: groove; border-radius: 5px 0px 0px 5px;"
+									class="btn btn-primary " btn-radio="'four'"
+									ng-change="change()" ng-model="noOfProperty"> Four </label>
+									<label style="width: 20%; border-style: groove;"
+									class="btn btn-primary " btn-radio="'more'"
+									ng-change="change()" ng-model="noOfProperty"> More </label>
+									<label style="width: 20%; border-style: groove; border-radius: 0px 5px 5px 0px;"
+									class="btn btn-primary " btn-radio="'none'"
+									ng-change="change()" ng-model="noOfProperty"> None </label>
+							</div>
+							<div id="role1"></div>
+							<input type="hidden" id="role" name="howManyProperties" value="{{noOfProperty}}"
+								ng-required> <br>
+								
+							<div ng-show="noOfProperty == 'one'" class="form-input-wide" >
+												
+								<table class="s" id="tb" style="border-spacing: 0; border-collapse: collapse;">
+									<tr class="tr-header">
+										<th colspan="2" width="30%">Address</th>
+										<th width="14%">Appx Value</th>
+										<th width="14%">Mortgage</th>
+										<th width="12%">Rent/Mo</th>
+										<th width="12%">Condo Fees/Mo</th>
+										<th width="14%">Ownership</th>
+										<th width="4%">Selling</th>
+										
+									<tr ng-if="listLength!=1 ">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete0" placeholder="Enter Location" class="form-control" name="address0" style="width: 100%" value="">
+											<div id="input_200211" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue1" placeholder="500,000"
+											 class="form-control" value="" onkeypress="return isNumber(event)">
+											 <div id="input_200212" style="position: absolute;"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage1" placeholder="500,000" class="form-control" value="" onkeypress="return isNumber(event)">
+											 <div id="input_200_212" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type ="input-number"
+											name="rentMo1" placeholder="2,300" class="form-control" value="" onkeypress="return isNumber(event)">
+											<div id="input_200_213" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees1" placeholder="500" class="form-control" value="" onkeypress="return isNumber(event)">
+											<div id="input_200_214" style="position: absolute;"> </div></td>
+											</td>
+										<td><select name="ownership1"  class="form-control">
+											  	<option value="">Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_200213" style="position: absolute;"> </div>
+											</td>
+										<td><center>
+					                    	 	<input type="checkbox" name="agree1" value = "on">
+					                    	 	</center>
+					               	 		 </td>	
+									</tr>
+									
+										<tr ng-if="listLength==1 ">
+										@for(list <-propertyList){
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete0" placeholder="Enter Location" class="form-control" name="address0" style="width: 100%" value="@list.getName">
+											<div id="input_200211" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue1" placeholder="500,000"
+											 class="form-control" value="@list.getValue" onkeypress="return isNumber(event)">
+											  <div id="input_200212" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage1" placeholder="500,000" class="form-control" value="@list.getMortgageValue" onkeypress="return isNumber(event)">
+											 <div id="input_200_212" style="position: absolute;"> </div></td>
+											</td>
+										<td><input type="number" data-type ="input-number"
+											name="rentMo1" placeholder="2,300" class="form-control" value="@list.getMonthlyRent" onkeypress="return isNumber(event)">
+											<div id="input_200_213" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees1" placeholder="500" class="form-control" value="@list.getMoCondoFees" onkeypress="return isNumber(event)">
+											<div id="input_200_214" style="position: absolute;"> </div></td>
+										<td><select name="ownership1"  class="form-control">
+											  	<option value="@list.getOwnwerShip">@list.getOwnwerShip</option>
+											    <option value="@applicantName">@applicantName</option>
+											      @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											   
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+											<center>
+												<input  type="checkbox" name="agree1" value = "on"  ng-checked="@list.getSelling" >
+					                   	 	</center>
+					               	 		</td>	
+					               	 		}
+									</tr>
+									<input type="hidden" value="" name="ownership12">
+								</table>
+							</div>
+							
+								<div ng-show="noOfProperty == 'two'" class="form-input-wide">
+								<table class="s" id="tb" style="border-collapse: separate;  border-spacing: 0 23px;">
+									<tr class="tr-header">
+										<th colspan="2" width="30%">Address</th>
+										<th width="14%">Appx Value</th>
+										<th width="14%">Mortgage</th>
+										<th width="12%">Rent/Mo</th>
+										<th width="12%">Condo Fees/Mo</th>
+										<th width="14%">Ownership</th>
+										<th width="4%">Selling</th>
+									
+									<tr ng-if="listLength!=2">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete71" placeholder="Enter Location" class="form-control" name="currentAddress21" style="width: 100%" value="">
+											<div id="input_2001" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue21" placeholder="500,000"
+											 class="form-control" value="" onkeypress="return isNumber(event)">
+											 <div id="input_200111" style="position: absolute;"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage21" placeholder="500,000" class="form-control" value="" onkeypress="return isNumber(event)">
+											 <div id="input_101" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo21" placeholder="2,300" class="form-control" value="" onkeypress="return isNumber(event)">
+											 <div id="input_102" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees21" placeholder="500" class="form-control" value="" onkeypress="return isNumber(event)">
+											 <div id="input_103" style="position: absolute;"> </div></td>
+										<td><select name="ownership21"  class="form-control">
+											  	<option value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											      @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_701" style="position: absolute;"> </div>
+											</td>
+										<td>
+					                    	 <center><input type="checkbox" name="agreeTwo1" value = "on"></center>
+					                    	 	
+										</td>		
+									</tr>
+										
+									<tr  ng-if="listLength!=2">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete72" placeholder="Enter Location" class="form-control" name="currentAddress22" style="width: 100%">
+											<div id="input_2002" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue22" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_20022" style="position: absolute;"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage22" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											<div id="input_104" style="position: absolute;"> </div></td>
+											</td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo22" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_105" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees22" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											
+											<div id="input_106" style="position: absolute;"> </div></td>
+										<td><select name="ownership22"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_20012" style="position: absolute;"> </div>
+											</td>
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeTwo2" value = "on">
+					                   	 		<label><i></i></label>
+					                   	 	</center>	
+										</td>	
+									</tr>
+									
+									@if(propertyList.length==2){
+										@for((list,index) <-propertyList.zipWithIndex){
+									<tr ng-init="sellingValue=@list.getSelling;">
+									<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete7@{index+1}" placeholder="Enter Location" class="form-control" name="currentAddress2@{index+1}" style="width: 100%" value="@list.getName">
+											<div id="input_2001" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue2@{index+1}" placeholder="500,000"
+											 class="form-control" value="@list.getValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage2@{index+1}" placeholder="500,000" class="form-control" value="@list.getMortgageValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo2@{index+1}" placeholder="2,300" class="form-control" value="@list.getMonthlyRent" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees2@{index+1}" placeholder="500" class="form-control" value="@list.getMoCondoFees" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership2@{index+1}" class="form-control">
+											  	<option value="@list.getOwnwerShip">@list.getOwnwerShip</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+										<div>
+											<center>
+					                    	 	<input  type="checkbox" name="agreeTwo@{index+1}" value = "on"  ng-checked="@list.getSelling" >
+					                   	 	</center>	
+					               	 		</div>
+										</td>		
+									</tr>
+										}
+									}
+								</table>
+							</div>
+							  
+							<div ng-show="noOfProperty == 'three'" class="form-input-wide" ng-init="listSize3=1">
+								<table class="s" id="tb" style="border-collapse: separate;  border-spacing: 0 5px;">
+									<tr class="tr-header">
+										<th colspan="2" width="30%">Address</th>
+										<th width="14%">Appx Value</th>
+										<th width="14%">Mortgage</th>
+										<th width="12%">Rent/Mo</th>
+										<th width="12%">Condo Fees/Mo</th>
+										<th width="14%">Ownership</th>
+										<th width="4%">Selling</th> 
+										
+										
+									<tr ng-if="listLength!=3">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete2" placeholder="Enter Location" class="form-control" name="currentAddress31" style="width: 100%">
+											<div id="input_20011" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue31" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_200131" style="position: absolute;" onkeypress="return isNumber(event)"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage31" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											<div id="mort_31" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo31" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											<div id="rentMo_31" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees31" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											<div id="condoFees_31" style="position: absolute;"> </div></td>
+										<td><select name="ownership31"  class="form-control">
+											 	<option value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_200132" style="position: absolute;"> </div>
+											</td>
+										<td>
+					                    	<center><input type="checkbox" name="agreeThree1" value = "on"></center>
+										</td>		
+									</tr>
+									<tr  ng-if="listLength!=3">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete3" placeholder="Enter Location" class="form-control" name="currentAddress32" style="width: 100%">
+											<div id="input_203211" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue32" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_203212" style="position: absolute;"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage32" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											<div id="mortgage_32" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo32" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											<div id="rentMo_32" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees32" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											<div id="condoFees_32" style="position: absolute;"> </div></td>
+										<td><select name="ownership32"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_203214" style="position: absolute;"> </div>
+											</td>	
+										<td>
+					                    	<center><input type="checkbox" name="agreeThree2" value = "on"></center>
+										</td>	
+									</tr>
+									<tr  ng-if="listLength!=3">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete4" placeholder="Enter Location" class="form-control" name="currentAddress33" style="width: 100%">
+											<div id="input_2043" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue33" placeholder="500,000"
+											 class="form-control">
+											 <div id="input_2044" style="position: absolute;" onkeypress="return isNumber(event)"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage33" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											<div id="mortgage_33" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo33" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											<div id="rentMo_33" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees33" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											<div id="condoFees_33" style="position: absolute;"> </div></td>
+										<td><select name="ownership33"  class="form-control">
+											 	<option value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_2045" style="position: absolute;"> </div>
+											</td>
+										<td>
+					                    	<center><input type="checkbox" name="agreeThree3" value = "on"></center>
+										</td>	
+									</tr>
+									@if(propertyList.length==3){
+							
+										@for((list,index) <-propertyList.zipWithIndex){
+									
+									<tr ng-init="sellingValue=@list.getSelling;">
+							
+									<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete@{index+2}" placeholder="Enter Location" class="form-control" name="currentAddress3@{index+1}" style="width: 100%" value="@list.getName">
+											<div id="input_200211" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue3@{index+1}" placeholder="500,000"
+											 class="form-control" value="@list.getValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage3@{index+1}" placeholder="500,000" class="form-control" value="@list.getMortgageValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type ="input-number"
+											name="rentMo3@{index+1}" placeholder="2,300" class="form-control" value="@list.getMonthlyRent" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees3@{index+1}" placeholder="500" class="form-control" value="@list.getMoCondoFees" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership3@{index+1}"  class="form-control">
+											  	<option value="@list.getOwnwerShip">@list.getOwnwerShip</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td><center>
+					                    	 	<input  type="checkbox" name="agreeThree@{index+1}"  value = "on" ng-checked="@list.getSelling" >
+					                   	 	</center>
+					                   	 	</td>	
+									</tr>
+										}
+									}
+								</table>
+							</div> 
+							
+							<div ng-show="noOfProperty == 'four'" class="form-input-wide">
+ 
+								<table class="s"  style="border-collapse: separate;  border-spacing: 0 5px;" id="POITable">
+									<tr class="tr-header">
+										<th colspan="2" width="30%">Address</th>
+										<th width="14%">Appx Value</th>
+										<th width="14%">Mortgage</th>
+										<th width="12%">Rent/Mo</th>
+										<th width="12%">Condo Fees/Mo</th>
+										<th width="14%">Ownership</th>
+										<th width="4%">Selling</th>
+										
+									<tr ng-if="listLength!=4">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete41" placeholder="Enter Location" class="form-control" name="currentAddress41" style="width: 100%">
+											<div id="input_2032e11ww1s1" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue41" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_2032" style="position: absolute;"> </div>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage41" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											<div id="mortgage_41" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo41" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											<div id="rentMo_41" style="position: absolute;"> </div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees41" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											<div id="condoFees_41" style="position: absolute;"> </div></td>
+										<td><select name="ownership41" class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_2033" style="position: absolute;"> </div>
+											</td>	
+										<td>
+					                    	 <center><input type="checkbox" name="agreeFour1" value = "on"></center>
+										</td>	
+									</tr>
+									<tr ng-if="listLength!=4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete42" placeholder="Enter Location" class="form-control" name="currentAddress42" style="width: 100%">
+											<div id="input_2212" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue42" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_20322" style="position: absolute;"></div></td>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage42" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="mortgage_42" style="position: absolute;"></div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo42" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="rentMo_42" style="position: absolute;"></div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees42" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="condoFees_42" style="position: absolute;"></div></td>
+										<td><select name="ownership42"  class="form-control">
+											  <option   value="" selected>Select</option>
+											   <option value="@applicantName">@applicantName</option>
+											   @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_20323" style="position: absolute;"></div></td>
+											</td>	
+										<td>
+					                    	 	<center><input type="checkbox" name="agreeFour2" value = "on"></center>
+										</td>	
+									</tr>
+									<tr ng-if="listLength!=4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete43" placeholder="Enter Location" class="form-control" name="currentAddress43" style="width: 100%">
+											<div id="input_20121" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue43" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_201212" style="position: absolute;"></div></td>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage43" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="mortgage_43" style="position: absolute;"></div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo43" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="rentMo_43" style="position: absolute;"></div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees43" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="condoFees_43" style="position: absolute;"></div></td>
+										<td><select name="ownership43"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_201213" style="position: absolute;"></div></td>
+											</td>
+										<td>
+					                    	<center><input type="checkbox" name="agreeFour3" value = "on"></center>
+										</td>		
+									</tr>
+									<tr ng-if="listLength!=4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete44" placeholder="Enter Location" class="form-control" name="currentAddress44" style="width: 100%">
+											<div id="input_2032121" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue44" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)">
+											 <div id="input_20212" style="position: absolute;"></div></td>
+											 </td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage44" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="mortgage_44" style="position: absolute;"></div></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo44" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="rentMo_44" style="position: absolute;"></div></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees44" placeholder="500" class="form-control" onkeypress="return isNumber(event)">
+											 <div id="condoFees_44" style="position: absolute;"></div></td>
+										<td><select name="ownership44"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select>
+											<div id="input_20213" style="position: absolute;"></div></td>
+											</td>
+										<td><center><input type="checkbox" name="agreeFour4" value = "on"></center></td>		
+									</tr>
+									
+									@if(propertyList.length==4){
+							
+										@for((list,index) <-propertyList.zipWithIndex){
+									
+									<tr ng-init="sellingValue=@list.getSelling;">
+									<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete4@{index+1}" placeholder="Enter Location" class="form-control" name="currentAddress4@{index+1}" style="width: 100%" value="@list.getName">
+											<div id="input_2032e11ww1s1" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue4@{index+1}" placeholder="500,000"
+											 class="form-control" value="@list.getValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage4@{index+1}" placeholder="500,000" class="form-control" value="@list.getMortgageValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo4@{index+1}" placeholder="2,300" class="form-control" value="@list.getMonthlyRent" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees4@{index+1}" placeholder="500" class="form-control" value="@list.getMoCondoFees" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership4@{index+1}" class="form-control">
+											  	<option value="@list.getOwnwerShip">@list.getOwnwerShip</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>	
+										<td>
+											<center>
+												<input ng-checked="@list.getSelling" type="checkbox" name="agreeFour@{index+1}" value = "on" checked="checked">
+											</center>
+										</td>	
+									</tr>
+									}
+								}	
+								</table>
+							</div>
+							<div ng-show="noOfProperty == 'more'"><br>
+							<table class="s"  style="border-collapse: separate;  border-spacing: 0 5px;" id="POITable">
+									<tr class="tr-header">
+										<th colspan="2" width="30%">Address</th>
+										<th width="14%">Appx Value</th>
+										<th width="14%">Mortgage</th>
+										<th width="12%">Rent/Mo</th>
+										<th width="12%">Condo Fees/Mo</th>
+										<th width="14%">Ownership</th>
+										<th width="4%">Selling</th> 
+									<tr ng-if="listLength <= 4">
+										<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete51" placeholder="Enter Location" class="form-control" name="currentAddress51" style="width: 100%">
+											<div id="input_2032e11ww1s1" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue51" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage51" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo51" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees51" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership51" class="form-control">
+											  <option   value="" selected>Select</option>
+											   <option value="@applicantName">@applicantName</option>
+											   @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>	
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive1" value = "on">
+					                   	 	</center>
+										</td>
+											
+									</tr>
+									
+									<tr ng-if="listLength <= 4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete52" placeholder="Enter Location" class="form-control" name="currentAddress52" style="width: 100%">
+											<div id="input_2032e11ww1sas1" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue52" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage52" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo52" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees52" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership52"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>	
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive2" value = "on">
+					                   	 	</center>
+										</td>	
+									</tr>
+									<tr ng-if="listLength >= 4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete53" placeholder="Enter Location" class="form-control" name="currentAddress53" style="width: 100%">
+											<div id="input_2032e11ww1sas1" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue53" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage53" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo53" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees53" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership53"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive3" value = "on">
+					                   	 	</center>
+										</td>		
+									</tr>
+									<tr ng-if="listLength <= 4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete54" placeholder="Enter Location" class="form-control" name="currentAddress54" style="width: 100%">
+											<div id="input_2032e11ww1sas1" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue54" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage54" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo54" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees54" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership54"  class="form-control">
+											  <option   value="" selected>Select</option>
+											   <option value="@applicantName">@applicantName</option>
+											   @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive4" value = "on">
+					                   	 	</center>
+										</td>		
+									</tr>
+									<tr ng-if="listLength <= 4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete55" placeholder="Enter Location" class="form-control" name="currentAddress55" style="width: 100%">
+											<div id="input_2032e11ww1sas1" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue55" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage55" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo55" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees55" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership55"  class="form-control">
+											  <option   value="" selected>Select</option>
+											   <option value="@applicantName">@applicantName</option>
+											   @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive5" value = "on">
+					                   	 	</center>
+										</td>		
+									</tr>
+									<tr ng-if="listLength <= 4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete56" placeholder="Enter Location" class="form-control" name="currentAddress56" style="width: 100%">
+											<div id="input_2032e11ww1sas1" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue56" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage56" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo56" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees56" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership56"  class="form-control">
+											  <option   value="" selected>Select</option>
+											   <option value="@applicantName">@applicantName</option>
+											   @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive6" value = "on">
+					                   	 	</center>
+										</td>		
+									</tr>
+									<tr ng-if="listLength <= 4">
+										<td colspan="2"><div class="map_canvas"></div>
+											<input type="text" id="geocomplete57" placeholder="Enter Location" class="form-control" name="currentAddress57" style="width: 100%">
+											<div id="input_2032e11ww1sas1" style="position: absolute;"></div></td>
+										<td><input type="text" name="appxValue57" placeholder="500,000"
+											 class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage57" placeholder="500,000" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo57" placeholder="2,300" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees57" placeholder="500" class="form-control" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership57"  class="form-control">
+											  <option   value="" selected>Select</option>
+											    <option value="@applicantName">@applicantName</option>
+											    @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>
+										<td>
+											<center>
+					                    	 	<input type="checkbox" name="agreeFive7" value = "on">
+					                   	 	</center>
+										</td>		
+									</tr>
+									@if(propertyList.length >4){
+							
+									@for((list,index) <-propertyList.zipWithIndex){
+									
+									<tr ng-init="sellingValue=@list.getSelling;">
+									<td colspan="2"><div style="padding-left: 0%;">
+											<div class="map_canvas"></div>
+											<input type="text" id="geocomplete5@{index+1}" placeholder="Enter Location" class="form-control" name="currentAddress5@{index+1}" style="width: 100%" value="@list.getName">
+											<div id="input_2032e11ww1s1" style="position: absolute;"> </div>
+											</div></td>
+										<td><input type="text" name="appxValue5@{index+1}" placeholder="500,000"
+											 class="form-control" value="@list.getValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="mortgage5@{index+1}" placeholder="500,000" class="form-control" value="@list.getMortgageValue" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="rentMo5@{index+1}" placeholder="2,300" class="form-control" value="@list.getMonthlyRent" onkeypress="return isNumber(event)"></td>
+										<td><input type="number" data-type="input-number"
+											name="condoFees5@{index+1}" placeholder="500" class="form-control" value="@list.getMoCondoFees" onkeypress="return isNumber(event)"></td>
+										<td><select name="ownership5@{index+1}" class="form-control">
+											  	<option value="@list.getOwnwerShip">@list.getOwnwerShip</option>
+											   <option value="@applicantName">@applicantName</option>
+											   @if(coApplicantName!=""){
+											    <option value="@coApplicantName">@coApplicantName</option>
+											    }
+											    
+											    <option value="Joint">Joint</option>
+											</select></td>	
+										<td>
+											<center>
+												<input type="checkbox" name="agreeFive@{index+1}" ng-checked="@list.getSelling;"  value = "on">
+					                   	 	</center>
+										</td>
+									</tr>
+									}
+									}
+								</table>
+						<br>
+						</div>
+									
+		</div>
+		<br>
+		 			<div class="row" style="width: 100%;">
+								<div class="col-sm-6"
+									style="float: left; padding-left: 2%; width: 50%;">
+									<a href="mortgageBackPage10" class="btn btn-primary"
+										role="button" style="width: 50%;">Back</a>
+								</div>
+							<div class="col-sm-6" align="right" style="float: right; padding-right:5%; width: 50%;"><input type="submit" class="btn btn-primary btn-block"
+								value="Next" style="width: 50%;">
+							<div align="right" id="submiterror">
+								<font color="red"></font></div>
+					  </div>
+					<br><br>
+				</div>
+						<br>
+						<div class="container" style="width: 70%;">
+						  <div class="progress">
+						    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:95%; background-color: #6AA84F;">
+						    <label>95% complete</label>
+						    </div>
+						  </div>
+						</div>
+					 </div>
+				</div>
+				</div>
+				<br>
+				
+</form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $.mask.definitions['~'] = "[+-]";
+
+        $("#phonedatata").mask("999-999-9999");
+    });
+	
+</script>
+
+ <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+ 
+    <script src="jquery.geocomplete.js"></script>
+    
+    <script type="text/javascript">
+    var app = angular.module("demoApp", ['ui.bootstrap']);
+
+    app.controller('DemoController', function ($scope) {
+        init();
+        function init() {
+            $scope.newItemType = '';
+            $scope.company="";
+            $scope.change = function () {
+                console.log($scope.newItemType)
+            };
+        }
+        
+        $scope.calculateDate = function ($scope) {
+        	$scope.employetotal=0;
+        	var one= $scope.movedIn1;
+        	var date =one.split("/");
+            var oneDate=date[0]+"/1/"+date[2];
+            var total=0;
+            
+            var today = new Date();
+    		var datevDate=new Date(oneDate);
+    		
+    		var one_day=1000*60*60*24;
+    		var date1ms=today.getTime();
+    		var date2ms=datevDate.getTime();
+    		
+    		var totmili=date1ms-date2ms;
+    		var totalDays=Math.round(totmili/one_day);
+    		var totalMonths=Math.abs((totmili/one_day)/30);
+    		
+    		total=Math.floor(totalMonths); 
+    		
+    		$scope.applicantTotal1 = total;
+             		
+    		
+    		if(total <36){
+    			one= $scope.movedIn2;
+    			date =one.split("/");
+                oneDate=date[0]+"/1/"+date[2];
+        	   	datevDate=new Date(oneDate);
+        	   	
+       		 	one_day=1000*60*60*24;
+       		 	date1ms=date2ms;
+       		
+       			date2ms=datevDate.getTime();
+       			totmili=date1ms-date2ms;
+       			if(isNaN(totmili) == false){
+       				 
+              		totalDays=Math.round(totmili/one_day);
+              		totalMonths=Math.abs((totmili/one_day)/30);
+            		total=total+Math.floor(totalMonths); 
+            		$scope.applicantTotal2 = total;
+    			
+    		}
+       			
+    		}
+    		/* document.getElementById("applicantTotal2").value=total; */
+        }
+        
+        $scope.calculateDate2 = function ($scope) {
+        	$scope.employetotal=0;
+        	var one= $scope.CoMovedIn1;
+    
+        	var date =one.split("/");
+            var oneDate=date[0]+"/1/"+date[2];
+            var total=0;
+            var today = new Date();
+    		var datevDate=new Date(oneDate);
+    		
+    		var one_day=1000*60*60*24;
+    		var date1ms=today.getTime();
+    		var date2ms=datevDate.getTime();
+    		
+    		var totmili=date1ms-date2ms;
+    		var totalDays=Math.round(totmili/one_day);
+    		var totalMonths=Math.abs((totmili/one_day)/30);
+    		
+    		total=Math.floor(totalMonths); 
+    		$scope.coApplicantTotal = total;
+    		
+    		if(total <36){
+    			one= $scope.CoMovedIn2;
+    			date =one.split("/");
+                oneDate=date[0]+"/1/"+date[2];
+        	   	datevDate=new Date(oneDate);
+        	   	
+       		 	one_day=1000*60*60*24;
+       		 	date1ms=date2ms;
+       		
+       			date2ms=datevDate.getTime();
+       			totmili=date1ms-date2ms;
+       			if(isNaN(totmili) == false){
+       				 
+              		totalDays=Math.round(totmili/one_day);
+              		totalMonths=Math.abs((totmili/one_day)/30);
+            		total=total+Math.floor(totalMonths); 
+            		$scope.coApplicantTotal2 = total;
+    			
+    		}
+    		}
+        }
+        
+		  $scope.singleModel = 1;
+		  var howManyProperties1 = document.forms["myForm"]["howManyProperties123"].value;
+          if(howManyProperties1 !="" && howManyProperties1 != null)
+		  $scope.noOfProperty = howManyProperties1;
+    });
+    </script>
+<script src="@routes.Assets.at("_resources/jquery.maskedinput.min.js")" type="text/javascript"></script>
+</body>
+</html>

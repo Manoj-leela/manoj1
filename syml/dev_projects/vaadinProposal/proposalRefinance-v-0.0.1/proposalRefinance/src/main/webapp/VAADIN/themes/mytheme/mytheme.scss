@@ -1,0 +1,165 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+$v-grid-header-background-color:#0070C0;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+  @include valo;
+  .v-table-header {
+    color: #fff;
+    background: #4455aa;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .v-caption-horizontal {
+  display: inline-block;
+}
+
+
+  .loppp{
+           background-color:#cee1f3;
+           border-style: solid;
+   		   border-color: black;
+   		   border-width: 1px;
+   		   padding: 5px;
+   		   padding-left:40px;
+      }
+      
+      .labelcolor{
+      color:#0070C0;
+      font-size:30px;
+      
+      font-weight: normal;
+      }
+      
+      .labeltext{
+     
+      font-size:18px;
+     
+      font-family:Times New Roman, Times, serif;
+      font-weight: normal;
+      }
+      .labeltext1{
+     
+      font-size:25px;
+     
+      font-family:Arial;
+      font-weight: bold;
+      }
+      
+    
+      
+      .csslayoutformargin{
+      
+       	margin-left:150px;
+  		margin-right:150px;
+  		margin-top:50px;
+ 		margin-bottom:80px;
+ 
+  		
+      }
+      
+     
+      
+      
+      .v-gridlayout-spacing-on {
+	padding-left: 6px;
+	padding-top: 2px;
+	overflow: hidden;
+}
+.gridwithpics128px .imagecol {
+   
+    background: blue;
+   
+}
+
+
+ .v-gridlayout-gridexample { 
+
+	margin: 0px;
+	padding:5px;
+	border: 5px;
+	background:black;
+}
+.v-gridlayout-gridexample  div { 
+padding: 0px; 
+background: #cee1f3;
+}
+
+.v-gridlayout-gridexample .v-textfield {
+    text-align: left;
+    background: #ffffc0; /* Pale yellow */
+}
+
+      .csslayoutformargin .v-margin-bottom{
+	padding-bottom:5px;
+}
+.csslayoutformargin .v-margin-top{
+padding-top:5px;
+}
+    
+ .v-grid-header th {
+ 		 font-size: 16px;
+  		font-weight: bold;
+  		background-color:#000000;
+  		
+	}
+	.v-grid-header .v-grid-cell{    
+    color: black;  
+    font-weight: normal;
+    font-size: 16px;
+    
+     
+    
+}
+.v-grid-cell {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+     
+     
+}
+
+.vertical-separator {
+  background:black;
+}
+.csstag {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 5px;
+}
+
+
+  // Insert your own theme rules here
+}

@@ -1,0 +1,446 @@
+package controllers;
+
+import static play.data.Form.form;
+
+import java.io.IOException;
+import java.util.Date;
+
+import play.Logger;
+import play.data.DynamicForm;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.client;
+import views.html.clientV;
+import views.html.error;
+import views.html.leadsucess;
+import views.html.planner;
+import views.html.plannerV;
+import views.html.professional;
+import views.html.professionalV;
+import views.html.realtor;
+import views.html.realtorV;
+import views.html.visdomferral;
+import views.html.visdomferralV;
+import views.html.visdomreferral2;
+import views.html.visdomreferral3;
+import views.html.wfg;
+import views.html.wfg2;
+import views.html.wfgV;
+
+import com.couchbase.client.java.document.json.JsonObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.syml.Constants;
+import com.syml.couchbase.dao.CouchbaseServiceException;
+import com.syml.couchbase.dao.service.CouchBaseService;
+import com.syml.hibernate.dao.IPostGresDaoService;
+import com.syml.hibernate.dao.PostGressDaoServiceException;
+import com.syml.hibernate.dao.impl.PostgresDAO;
+import com.syml.referralsource.impl.ReferralConstants;
+import com.syml.referralsource.impl.ReferralSourcePageService;
+import com.syml.referralsource.impl.ReferralSourcePageServiceException;
+import com.syml.referralsource.impl.ReferralTaskCreationRestCall;
+
+@SuppressWarnings("unused")
+public class VisdomReferral extends Controller {
+	
+/**
+ * To render BookMark page
+ * @return
+ */
+	public static Result bookmark() {
+		return ok(visdomreferral3.render(""));
+
+	}
+
+	/**
+	 * To Render Referral Page 
+	 * @return
+	 */
+	public static Result referral() {
+		
+		
+
+		return ok(visdomferral.render(""));
+
+	}
+
+	/**
+	 * To Render Wfg video page 
+	 * @return
+	 */
+	public static Result wfgV() {
+
+		return ok(wfgV.render(""));
+	}
+
+	/**
+	 * To render wfg non Video Page
+	 * @return
+	 */
+	public static Result wfg() {
+
+		return ok(wfg.render(""));
+	}
+
+	/**
+	 * To render Referral video Page 
+	 * @return
+	 */
+	public static Result referralV() {
+
+		return ok(visdomferralV.render(""));
+
+	}
+
+	/**
+	 * To render Realtor non Video page 
+	 * @return
+	 */
+	public static Result realtor() {
+
+		return ok(realtor.render(""));
+
+	}
+
+	/**
+	 * To render Realtor video page 
+	 * @return
+	 */
+	public static Result realtorV() {
+
+		return ok(realtorV.render(""));
+
+	}
+
+	/**
+	 * To render Professional non video page
+	 * @return
+	 */
+	public static Result professional() {
+
+		return ok(professional.render(""));
+
+	}
+
+	/**
+	 * To render professional video page
+	 * @return
+	 */
+	public static Result professionalV() {
+
+		return ok(professionalV.render(""));
+
+	}
+
+	/**
+	 * To render planner Non video page 
+	 * @return
+	 */
+	public static Result planner() {
+
+		return ok(planner.render(""));
+
+	}
+
+	/**
+	 * To render planner Non video page 
+	 * @return
+	 */
+	public static Result plannerV() {
+
+		return ok(plannerV.render(""));
+
+	}
+
+	/**
+	 * to render client non video page
+	 * @return
+	 */
+	public static Result client() {
+
+		return ok(client.render(""));
+
+	}
+
+	/**
+	 * To render client Non video page 
+	 * @return
+	 */
+	public static Result clientV() {
+
+		return ok(clientV.render(""));
+
+	}
+
+	
+	/**
+	 * To get Referral Form details , create referral if not exist else update Referral
+	 * stored data couchbase 
+	 * 
+	 * @return
+	 */
+	public static Result visdomReferral() {
+		DynamicForm dynamicForm = form().bindFromRequest();
+		int couchbaseSucessValue = 0;
+		int referralExist = 0;
+		CouchBaseService storeData = new CouchBaseService();
+		String []  arrayOfAddress=	request().body().asFormUrlEncoded().get("formatted_address");
+		ReferralSourcePageService refService=new ReferralSourcePageService();
+		IPostGresDaoService iPostGresDaoService = new PostgresDAO();
+		Referral_Source referral_Source = refService.loadReferralSourceForm(dynamicForm,arrayOfAddress);
+		try {
+		Contact contact =refService.checkContactExist(dynamicForm);
+		referral_Source.setActive(true);
+	
+				referral_Source=	refService.createReferralSource(contact, referral_Source);
+
+			referral_Source.setType_Referral(ReferralConstants.REFERRAL_SOURCE_FORM);
+			referral_Source.setReferralUrl(referral_Source.getId());
+			storeData.storeDataToCouchbase(
+					ReferralConstants.REFERRAL_SOURCE_FORM_COUHBASE_KEY
+							+ referral_Source.getId(), referral_Source);
+
+		}catch(CouchbaseServiceException e){
+			Logger.error("error in storing data to couchbase ", e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					
+					, ReferralConstants.COUCHBASE_ERROR
+					));
+		} catch (PostGressDaoServiceException e) {
+
+			Logger.error("Error in inserting Referral Details into Postgress DB = "+e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+				
+					, ReferralConstants.POSTGRES_ERROR
+					));
+		} 
+
+	
+			return ok(visdomreferral2.render(referral_Source.getRoleName(),
+					referral_Source.getId(), referralExist));
+
+		
+	}
+	
+	/**
+	 * To get Referral form 2 page values , generate Referral Agreement PDF
+	 * send referral Agreement  mail to REferral (broker or agent ) 
+	 * update referral with new update details 
+	 * @return
+	 */
+	public static Result visdomReferralForm2() {
+		int couchbaseSucessValue = 0;
+	
+		ReferralSourcePageService  reService=new ReferralSourcePageService();
+
+		DynamicForm dynamicForm = form().bindFromRequest();
+		String referrelId = dynamicForm.get("referrelID");
+		Referral_Source referral_Source = null;
+		CouchBaseService storeData = new CouchBaseService();
+		IPostGresDaoService iPostGresDaoService = new PostgresDAO();
+		try{
+		JsonObject json = storeData.getCouhbaseDataByKey(ReferralConstants.REFERRAL_SOURCE_FORM_COUHBASE_KEY+ referrelId);
+		referral_Source = new ObjectMapper().readValue(json.toString(),	Referral_Source.class);
+
+		referral_Source=reService.loadSecondFormData(dynamicForm,referral_Source);
+		referral_Source.setStage_id(ReferralConstants.REFERAL_INVOLVED_STAGE_ID);
+		referral_Source.setAgreement_date(new Date());
+		referral_Source.setActive(true);
+		iPostGresDaoService.updateReferral(referral_Source);
+
+		String filePath=reService.sendMailofReferralAgrement(referral_Source);
+		referral_Source=reService.storeReferralAgrementToCouchbase(filePath, referral_Source);
+		reService.deleteFile(filePath);
+
+		storeData.storeDataToCouchbase(ReferralConstants.REFERRAL_SOURCE_FORM_COUHBASE_KEY	+ referrelId, referral_Source);
+		String agreementURL = ReferralConstants.DOC_VIEWER_LINK + referrelId;
+		int ontraPortRoleId=reService.getOntharaportId(referral_Source);
+		reService.createContactInOntharaPort(referral_Source,
+					ontraPortRoleId, agreementURL);
+			
+		
+				new ReferralTaskCreationRestCall(referral_Source).start();			
+
+		}catch(CouchbaseServiceException  e){
+		
+			Logger.error("errro while processing second Referral source form ",e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+			,
+					ReferralConstants.COUCHBASE_ERROR
+					));
+		}catch (PostGressDaoServiceException |NullPointerException e) {
+
+			Logger.error("Error in updating Referral Details into Postgress DB ",e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					
+					, ReferralConstants.POSTGRES_ERROR
+					));
+		} catch (ReferralSourcePageServiceException e) {
+			Logger.error("Error in generating Referral Agreement PDF ",e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					,
+					 ReferralConstants.PDF_GENERATION_ERROR
+					));
+		} catch (IOException e) {
+			Logger.error("Error in sending Mail of REferral Agreement PDF ",e);
+
+			return ok(error.render(Constants.ERROR_MESSAGE
+					
+					, ReferralConstants.MAIL_ERROR
+					));
+		} 
+
+		
+			if (referral_Source.getReferralExist() == 0) {
+				return ok(leadsucess
+						.render("Thank you for becoming involved in the Visdom Referral Program. We have sent a copy of the referral agreement to the email provided. In the event you do not see it please check your spam folder in case your provider accidentally miscategorized it."));
+			} else {
+				return ok(leadsucess
+						.render("Thank you for your participation in the Visdom Referral Program.  Your information has been successfully updated. We have sent a copy of the referral agreement to the email provided. In the event you do not see it please check your spam folder in case your provider accidentally miscategorized it."));
+
+			}
+		
+
+	}
+
+
+
+	/**
+	 * To get wfg1 form pages details , create referral if not exist else update Referral
+	 * stored data couchbase 
+	 * @return
+	 */
+	public static Result wfg1() {
+		DynamicForm dynamicForm = form().bindFromRequest();
+		int couchbaseSucessValue = 0;
+		int referralExist = 0;
+		CouchBaseService storeData = new CouchBaseService();
+		String []  arrayOfAddress=	request().body().asFormUrlEncoded().get("formatted_address");
+		ReferralSourcePageService refService=new ReferralSourcePageService();
+		IPostGresDaoService iPostGresDaoService = new PostgresDAO();
+		Referral_Source referral_Source = refService.loadReferralSourceForm(dynamicForm,arrayOfAddress);
+		referral_Source.setCompany("WFG");
+		referral_Source.setCompensation("Company");
+		try {
+		Contact contact =refService.checkContactExist(dynamicForm);
+		referral_Source.setActive(true);
+	
+			
+		
+			referral_Source=	refService.createReferralSource(contact, referral_Source);
+			referral_Source.setType_Referral(ReferralConstants.REFERRAL_SOURCE_FORM);
+			referral_Source.setReferralUrl(referral_Source.getId());
+			storeData.storeDataToCouchbase(
+					ReferralConstants.REFERRAL_SOURCE_FORM_COUHBASE_KEY
+							+ referral_Source.getId(), referral_Source);
+
+		}catch(CouchbaseServiceException  e){
+			Logger.error("error in storing data to couchbase ", e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					,
+					 ReferralConstants.COUCHBASE_ERROR
+					));
+		} catch (PostGressDaoServiceException e) {
+
+			Logger.error("Error in inserting Referral Details into Postgress DB = "+e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					
+					, ReferralConstants.POSTGRES_ERROR
+					));
+		} 
+
+			
+				return ok(wfg2.render(referral_Source.getRoleName(),
+					referral_Source.getId(), referralExist));
+		
+
+	}
+	/**
+	 * To get wfg form 2 page values , generate Referral Agreement PDF
+	 * send referral Agreement  mail to REferral (broker or agent ) 
+	 * update referral with new update details 
+	 * @return
+	 */
+	public static Result wfg2() {
+		int couchbaseSucessValue = 0;
+	
+		ReferralSourcePageService  reService=new ReferralSourcePageService();
+
+		DynamicForm dynamicForm = form().bindFromRequest();
+		String referrelId = dynamicForm.get("referrelID");
+		Referral_Source referral_Source = null;
+		CouchBaseService storeData = new CouchBaseService();
+		IPostGresDaoService iPostGresDaoService = new PostgresDAO();
+		try{
+		JsonObject json = storeData.getCouhbaseDataByKey(ReferralConstants.REFERRAL_SOURCE_FORM_COUHBASE_KEY+ referrelId);
+		referral_Source = new ObjectMapper().readValue(json.toString(),	Referral_Source.class);
+
+		referral_Source=reService.loadSecondFormData(dynamicForm,referral_Source);
+		
+	
+		referral_Source.setStage_id(ReferralConstants.REFERAL_INVOLVED_STAGE_ID);
+		referral_Source.setAgreement_date(new Date());
+		referral_Source.setActive(true);
+		iPostGresDaoService.updateReferral(referral_Source);
+
+		String filePath=reService.sendMailofReferralAgrementForWfg(referral_Source);
+		referral_Source=reService.storeReferralAgrementToCouchbase(filePath, referral_Source);
+		reService.deleteFile(filePath);
+
+		storeData.storeDataToCouchbase(ReferralConstants.REFERRAL_SOURCE_FORM_COUHBASE_KEY	+ referrelId, referral_Source);
+		String agreementURL = ReferralConstants.DOC_VIEWER_LINK + referrelId;
+		int ontraPortRoleId=reService.getOntharaportId(referral_Source);
+		reService.createContactInOntharaPort(referral_Source,
+					ontraPortRoleId, agreementURL);
+			
+		
+			new ReferralTaskCreationRestCall(referral_Source).start();			
+
+		}catch(CouchbaseServiceException  e){
+			
+			Logger.error("errro while processing second Referral source form ",e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+				
+					, ReferralConstants.COUCHBASE_ERROR
+					));
+		}catch (PostGressDaoServiceException |NullPointerException e) {
+
+			Logger.error("Error in updating Referral Details into Postgress DB ",e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					,
+					 ReferralConstants.POSTGRES_ERROR
+					));
+		} catch (ReferralSourcePageServiceException e) {
+			Logger.error("Error in generating Referral Agreement PDF ",e);
+			return ok(error.render(Constants.ERROR_MESSAGE
+					,
+					 ReferralConstants.PDF_GENERATION_ERROR
+					));
+		} catch (IOException e) {
+			Logger.error("Error in sending Mail of REferral Agreement PDF ",e);
+
+			return ok(error.render(Constants.ERROR_MESSAGE
+					,
+					 ReferralConstants.MAIL_ERROR
+					));
+		} 
+
+	
+					if (referral_Source.getReferralExist() == 0) {
+				return ok(leadsucess
+						.render("Thank you for becoming involved in the Visdom Referral Program. We have sent a copy of the referral agreement to the email provided. In the event you do not see it please check your spam folder in case your provider accidentally miscategorized it."));
+			} else {
+				return ok(leadsucess
+						.render("Thank you for your participation in the Visdom Referral Program.  Your information has been successfully updated. We have sent a copy of the referral agreement to the email provided. In the event you do not see it please check your spam folder in case your provider accidentally miscategorized it."));
+
+			}
+		
+
+	}
+
+	
+
+	
+	
+
+}

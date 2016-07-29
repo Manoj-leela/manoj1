@@ -1,0 +1,1291 @@
+2016-07-28 14:55:12,390 - [INFO] - from play in pool-10-thread-3 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2016-07-28 14:55:42,985 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-07-28 14:55:43,418 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
+Inside mortgageApplication Method  
+
+2016-07-28 14:55:43,425 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+inside (.) checkExpireDate  method  
+
+2016-07-28 14:55:43,426 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+crmLead id is  ------ 4592
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 14:55:51,298 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 14:55:51,453 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+Old Opporunity Details Opportunity [id=4592, application_no=null, hr_department_id=null, application_date=null, what_is_your_lending_goal=null, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=null, type=null, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=null, liveDetails=null, pogressStatus=0, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=null, create_uid=null, role=C, additionalFunds=null, mlsListed=null, lendingGoal=null, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 14:55:51,453 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
+Is it mobileDevice =false
+
+2016-07-28 14:55:51,453 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+Old Opporunity Details Exsting  
+
+2016-07-28 14:55:51,453 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+pogressStatus 0
+
+2016-07-28 14:55:51,453 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+BBBB__>falsecccc_>trueisexprired -->true
+
+2016-07-28 14:56:05,434 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+(.)Inside mortgagePage2 
+
+2016-07-28 14:56:05,651 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4592}
+
+2016-07-28 14:56:11,812 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 14:56:11,885 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+applicant list size = 0
+
+2016-07-28 14:56:11,885 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+applicant size at last 1
+
+2016-07-28 14:56:11,885 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+Inside createApplicant() of Service Csass
+
+2016-07-28 14:56:11,892 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+createApplicant of PostgresDAOOpportunity [id=4592, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=manoj, applicant_last_name=prajapati, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=654-654-6464, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 14:56:11,892 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+size1
+
+2016-07-28 14:56:11,894 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+Before creating SESSION_FACTORY null
+
+2016-07-28 14:56:21,006 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+After creating SESSION_FACTORY org.hibernate.internal.SessionFactoryImpl@2938b424
+
+2016-07-28 14:56:21,108 - [ERROR] - from application in play-akka.actor.default-dispatcher-5 
+Error when creating new Applicants
+com.syml.mortgageapplication.impl.MortgageApplicationPageServiceException: Error when inserting data to postgress  for given Opporunity  =Opportunity [id=4592, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=manoj, applicant_last_name=prajapati, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=654-654-6464, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:99) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2(Mortgage.java:474) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) [scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: com.syml.hibernate.dao.PostGressDaoServiceException: Error in inserting applicants into DB for given opprotunityID = 4592
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:71) ~[classes/:na]
+	at com.syml.hibernate.service.PostGresDaoService.createApplicant(PostGresDaoService.java:20) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:93) ~[classes/:na]
+	... 39 common frames omitted
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [controllers.Opportunity#4592]
+	at org.hibernate.boot.internal.StandardEntityNotFoundDelegate.handleEntityNotFound(StandardEntityNotFoundDelegate.java:28) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:242) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:159) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:266) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:68) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at controllers.Opportunity_$$_jvst40b_0.setApplicants(Opportunity_$$_jvst40b_0.java) ~[classes/:na]
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:55) ~[classes/:na]
+	... 41 common frames omitted
+
+2016-07-28 14:59:20,903 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+Inside mortgageApplication Method  
+
+2016-07-28 14:59:20,904 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+inside (.) checkExpireDate  method  
+
+2016-07-28 14:59:20,905 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+crmLead id is  ------ 4592
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 14:59:34,195 - [ERROR] - from com.syml.couchbase.dao.CouchbaseUtil in play-akka.actor.default-dispatcher-10 
+error in connection couchbase connection with hostLsit= [192.168.1.47, 192.168.1.47, 192.168.1.47]
+
+2016-07-28 14:59:34,205 - [ERROR] - from application in play-akka.actor.default-dispatcher-10 
+Opporunity is Filling the form First Time so error To get OldOpporunity Deatails from Couchbase, Given OpporunityDetails= null
+com.syml.mortgageapplication.impl.MortgageApplicationPageServiceException: Error when reading Opportunity data from couchbase for OpporunityID=4592
+	at com.syml.couchbasehelper.CouchbaseServiceHelper.getCouhbaseDataByKey(CouchbaseServiceHelper.java:32) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageService.checkOpporunityExist(MortgageApplicationPageService.java:114) ~[classes/:na]
+	at controllers.Mortgage.mortgageApplication(Mortgage.java:116) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.apply(routes_routing.scala:706) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.apply(routes_routing.scala:706) [classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) [scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at com.syml.couchbase.dao.service.CouchBaseService.getCouhbaseDataByKey(CouchBaseService.java:103) ~[symlInfrastracture-0.0.1-SNAPSHOT.jar:na]
+	at com.syml.couchbasehelper.CouchbaseServiceHelper.getCouhbaseDataByKey(CouchbaseServiceHelper.java:28) ~[classes/:na]
+	... 40 common frames omitted
+
+2016-07-28 14:59:34,206 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+Old Opporunity Details null
+
+2016-07-28 14:59:34,206 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+Is it mobileDevice =false
+
+2016-07-28 14:59:54,636 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+(.)Inside mortgagePage2 
+
+2016-07-28 14:59:54,643 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4592}
+
+2016-07-28 14:59:55,894 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 14:59:55,941 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+applicant list size = 0
+
+2016-07-28 14:59:55,942 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+applicant size at last 1
+
+2016-07-28 14:59:55,942 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Inside createApplicant() of Service Csass
+
+2016-07-28 14:59:55,942 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+createApplicant of PostgresDAOOpportunity [id=4592, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=1, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=manoj, applicant_last_name=prajapati, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=654-654-6464, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=PreApproval, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 14:59:55,942 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+size1
+
+2016-07-28 14:59:56,190 - [ERROR] - from application in play-akka.actor.default-dispatcher-9 
+Error when creating new Applicants
+com.syml.mortgageapplication.impl.MortgageApplicationPageServiceException: Error when inserting data to postgress  for given Opporunity  =Opportunity [id=4592, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=1, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=manoj, applicant_last_name=prajapati, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=654-654-6464, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=PreApproval, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:99) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2(Mortgage.java:474) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) [scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: com.syml.hibernate.dao.PostGressDaoServiceException: Error in inserting applicants into DB for given opprotunityID = 4592
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:71) ~[classes/:na]
+	at com.syml.hibernate.service.PostGresDaoService.createApplicant(PostGresDaoService.java:20) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:93) ~[classes/:na]
+	... 39 common frames omitted
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [controllers.Opportunity#4592]
+	at org.hibernate.boot.internal.StandardEntityNotFoundDelegate.handleEntityNotFound(StandardEntityNotFoundDelegate.java:28) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:242) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:159) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:266) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:68) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at controllers.Opportunity_$$_jvst40b_0.setApplicants(Opportunity_$$_jvst40b_0.java) ~[classes/:na]
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:55) ~[classes/:na]
+	... 41 common frames omitted
+
+2016-07-28 15:08:20,793 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+Inside mortgageApplication Method  
+
+2016-07-28 15:08:20,794 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+inside (.) checkExpireDate  method  
+
+2016-07-28 15:08:20,794 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+crmLead id is  ------ 4592
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 15:08:20,911 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 15:08:20,937 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+Old Opporunity Details Opportunity [id=4592, application_no=null, hr_department_id=null, application_date=null, what_is_your_lending_goal=null, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=null, type=null, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=null, liveDetails=null, pogressStatus=0, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=null, create_uid=null, role=C, additionalFunds=null, mlsListed=null, lendingGoal=null, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 15:08:20,937 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+Is it mobileDevice =false
+
+2016-07-28 15:08:20,937 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+Old Opporunity Details Exsting  
+
+2016-07-28 15:08:20,937 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+pogressStatus 0
+
+2016-07-28 15:08:20,937 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+BBBB__>falsecccc_>trueisexprired -->true
+
+2016-07-28 15:08:32,551 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Inside mortgageApplication Method  
+
+2016-07-28 15:08:32,552 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+inside (.) checkExpireDate  method  
+
+2016-07-28 15:08:32,552 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+crmLead id is  ------ 4592
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 15:08:32,618 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 15:08:32,660 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+Old Opporunity Details Opportunity [id=4592, application_no=null, hr_department_id=null, application_date=null, what_is_your_lending_goal=null, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=null, type=null, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=null, liveDetails=null, pogressStatus=0, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=null, create_uid=null, role=C, additionalFunds=null, mlsListed=null, lendingGoal=null, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 15:08:32,660 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Is it mobileDevice =false
+
+2016-07-28 15:08:32,660 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+Old Opporunity Details Exsting  
+
+2016-07-28 15:08:32,660 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+pogressStatus 0
+
+2016-07-28 15:08:32,660 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+BBBB__>falsecccc_>trueisexprired -->true
+
+2016-07-28 15:08:38,649 - [INFO] - from application in play-akka.actor.default-dispatcher-18 
+Inside mortgageApplication Method  
+
+2016-07-28 15:08:38,650 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+inside (.) checkExpireDate  method  
+
+2016-07-28 15:08:38,650 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+crmLead id is  ------ 4592
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 15:08:38,992 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 15:08:39,013 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+Old Opporunity Details Opportunity [id=4592, application_no=null, hr_department_id=null, application_date=null, what_is_your_lending_goal=null, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=null, type=null, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=null, liveDetails=null, pogressStatus=0, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=null, create_uid=null, role=C, additionalFunds=null, mlsListed=null, lendingGoal=null, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 15:08:39,013 - [INFO] - from application in play-akka.actor.default-dispatcher-18 
+Is it mobileDevice =false
+
+2016-07-28 15:08:39,013 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+Old Opporunity Details Exsting  
+
+2016-07-28 15:08:39,013 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+pogressStatus 0
+
+2016-07-28 15:08:39,013 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+BBBB__>falsecccc_>trueisexprired -->true
+
+2016-07-28 15:08:58,303 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+(.)Inside mortgagePage2 
+
+2016-07-28 15:08:58,308 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4592}
+
+2016-07-28 15:09:03,945 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 15:09:03,962 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+applicant list size = 0
+
+2016-07-28 15:09:03,962 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+applicant size at last 1
+
+2016-07-28 15:09:03,963 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+Inside createApplicant() of Service Csass
+
+2016-07-28 15:09:03,963 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+createApplicant of PostgresDAOOpportunity [id=4592, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=malik, applicant_last_name=singh, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=654-654-6464, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 15:09:03,963 - [DEBUG] - from application in play-akka.actor.default-dispatcher-17 
+size1
+
+2016-07-28 15:09:03,979 - [ERROR] - from application in play-akka.actor.default-dispatcher-17 
+Error when creating new Applicants
+com.syml.mortgageapplication.impl.MortgageApplicationPageServiceException: Error when inserting data to postgress  for given Opporunity  =Opportunity [id=4592, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=malik, applicant_last_name=singh, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=654-654-6464, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:99) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2(Mortgage.java:474) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) [scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: com.syml.hibernate.dao.PostGressDaoServiceException: Error in inserting applicants into DB for given opprotunityID = 4592
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:71) ~[classes/:na]
+	at com.syml.hibernate.service.PostGresDaoService.createApplicant(PostGresDaoService.java:20) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:93) ~[classes/:na]
+	... 39 common frames omitted
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [controllers.Opportunity#4592]
+	at org.hibernate.boot.internal.StandardEntityNotFoundDelegate.handleEntityNotFound(StandardEntityNotFoundDelegate.java:28) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:242) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:159) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:266) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:68) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at controllers.Opportunity_$$_jvst40b_0.setApplicants(Opportunity_$$_jvst40b_0.java) ~[classes/:na]
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:55) ~[classes/:na]
+	... 41 common frames omitted
+
+2016-07-28 15:09:15,776 - [INFO] - from application in play-akka.actor.default-dispatcher-24 
+Inside mortgageApplication Method  
+
+2016-07-28 15:09:15,776 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+inside (.) checkExpireDate  method  
+
+2016-07-28 15:09:15,776 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+crmLead id is  ------ 4592
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 15:09:16,544 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+COuchbase Data Json Data for Opportunirty ID = 4592
+
+2016-07-28 15:09:16,559 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+Old Opporunity Details Opportunity [id=4592, application_no=null, hr_department_id=null, application_date=null, what_is_your_lending_goal=null, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=null, type=null, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=null, liveDetails=null, pogressStatus=0, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=null, create_uid=null, role=C, additionalFunds=null, mlsListed=null, lendingGoal=null, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 15:09:16,560 - [INFO] - from application in play-akka.actor.default-dispatcher-24 
+Is it mobileDevice =false
+
+2016-07-28 15:09:16,560 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+Old Opporunity Details Exsting  
+
+2016-07-28 15:09:16,560 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+pogressStatus 0
+
+2016-07-28 15:09:16,560 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+BBBB__>falsecccc_>trueisexprired -->true
+
+2016-07-28 15:09:32,975 - [INFO] - from application in play-akka.actor.default-dispatcher-24 
+Inside mortgageApplication Method  
+
+2016-07-28 15:09:32,975 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+inside (.) checkExpireDate  method  
+
+2016-07-28 15:09:32,976 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+crmLead id is  ------ 4593
+ Referral Email id is  ------  guy@visdom.ca
+ referralName Billy 
+ ExpirDate = 10/14/2016
+
+2016-07-28 15:09:33,273 - [ERROR] - from application in play-akka.actor.default-dispatcher-24 
+Opporunity is Filling the form First Time so error To get OldOpporunity Deatails from Couchbase, Given OpporunityDetails= null
+com.syml.mortgageapplication.impl.MortgageApplicationPageServiceException: Error when reading Opportunity data from couchbase for OpporunityID=4593
+	at com.syml.couchbasehelper.CouchbaseServiceHelper.getCouhbaseDataByKey(CouchbaseServiceHelper.java:32) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageService.checkOpporunityExist(MortgageApplicationPageService.java:114) ~[classes/:na]
+	at controllers.Mortgage.mortgageApplication(Mortgage.java:116) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.apply(routes_routing.scala:706) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.apply(routes_routing.scala:706) [classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) [scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at com.syml.couchbase.dao.service.CouchBaseService.getCouhbaseDataByKey(CouchBaseService.java:103) ~[symlInfrastracture-0.0.1-SNAPSHOT.jar:na]
+	at com.syml.couchbasehelper.CouchbaseServiceHelper.getCouhbaseDataByKey(CouchbaseServiceHelper.java:28) ~[classes/:na]
+	... 40 common frames omitted
+
+2016-07-28 15:09:33,273 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+Old Opporunity Details null
+
+2016-07-28 15:09:33,273 - [INFO] - from application in play-akka.actor.default-dispatcher-24 
+Is it mobileDevice =false
+
+2016-07-28 15:09:47,031 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+(.)Inside mortgagePage2 
+
+2016-07-28 15:09:47,039 - [DEBUG] - from application in play-akka.actor.default-dispatcher-27 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:09:48,237 - [DEBUG] - from application in play-akka.actor.default-dispatcher-27 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:09:48,255 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+applicant list size = 0
+
+2016-07-28 15:09:48,255 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+applicant size at last 1
+
+2016-07-28 15:09:48,255 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+Inside createApplicant() of Service Csass
+
+2016-07-28 15:09:48,255 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+createApplicant of PostgresDAOOpportunity [id=4593, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=malik, applicant_last_name=singh, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=123-231-2313, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+
+2016-07-28 15:09:48,256 - [DEBUG] - from application in play-akka.actor.default-dispatcher-27 
+size1
+
+2016-07-28 15:09:48,294 - [ERROR] - from application in play-akka.actor.default-dispatcher-27 
+Error when creating new Applicants
+com.syml.mortgageapplication.impl.MortgageApplicationPageServiceException: Error when inserting data to postgress  for given Opporunity  =Opportunity [id=4593, application_no=null, hr_department_id=1, application_date=null, what_is_your_lending_goal=, province=null, down_payment_amount=null, purchase_price=null, bank_account=null, rrsp_amount=null, stage_id=10, type=opportunity, active=null, borrowed_amount=null, sale_of_existing_amount=null, gifted_amount=null, personal_cash_amount=null, existing_equity_amount=null, sweat_equity_amount=null, monthly_rental_income=null, mls=null, address=null, city=null, living_in_property=null, postal_code=null, buy_new_vehicle=null, property_value=null, heating=null, water=null, property_type=null, property_style=null, garage_type=null, garage_size=null, square_footage=null, sewage=null, desired_mortgage_type=null, desired_term=null, desired_amortization=null, income_decreased_worried=null, future_family=null, lifestyle_change=null, financial_risk_taker=null, property_less_then_5_years=null, job_5_years=null, opportunity_id=null, applicants=[Applicant [id=null, applicant_name=malik, applicant_last_name=singh, email_personal=manoj.prajapati@gmail.com, work=null, home=null, cell=123-231-2313, dob=null, relationship_status=, sin=null, non_resident=null, opportunities=[], listOfAddress=[], incomes=[], assetList=[], properties=[], listOfMortgages=[], movedToCannada=null, dependant=null, electronicSign=null, normalSign=null, additionalReason=null]], areUsingTouchScreenDevice=null, isAdditionalApplicantExist=no, liveDetails=null, pogressStatus=10, investment=null, additional_amount=null, expireDate=10/14/2016, forms=Forms [deviceType=Desktop, ip=null, pages=null, startTime=null, geoCoordinates=null], referralSourceName=Billy, referralSourceEmail=guy@visdom.ca, mortgage_Brokerage_Disclosures_Id=null, user_id=26, create_uid=26, role=C, additionalFunds=null, mlsListed=null, lendingGoal=, propertyType=null, propertyStyle=null, squareFootage=null, propertyHeated=null, propertyWater=null, propertySewage=null, garageType=null, garageSize=null, propertyAddress=null]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:99) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2(Mortgage.java:474) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$27$$anonfun$apply$27.apply(routes_routing.scala:730) [classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) [scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) [play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) [play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: com.syml.hibernate.dao.PostGressDaoServiceException: Error in inserting applicants into DB for given opprotunityID = 4593
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:71) ~[classes/:na]
+	at com.syml.hibernate.service.PostGresDaoService.createApplicant(PostGresDaoService.java:20) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2Service.updatePage2Details(MortgageApplicationPage2Service.java:93) ~[classes/:na]
+	... 39 common frames omitted
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [controllers.Opportunity#4593]
+	at org.hibernate.boot.internal.StandardEntityNotFoundDelegate.handleEntityNotFound(StandardEntityNotFoundDelegate.java:28) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:242) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:159) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:266) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:68) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at controllers.Opportunity_$$_jvst40b_0.setApplicants(Opportunity_$$_jvst40b_0.java) ~[classes/:na]
+	at com.syml.hibernate.dao.impl.PostgresDAO.createApplicant(PostgresDAO.java:55) ~[classes/:na]
+	... 41 common frames omitted
+
+2016-07-28 15:13:25,626 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-07-28 15:14:17,855 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-07-28 15:14:56,824 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-07-28 15:15:18,413 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:16:08,405 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+(.)Inside mortgagePage2Pre
+
+2016-07-28 15:16:08,412 - [INFO] - from application in play-akka.actor.default-dispatcher-55 
+Inside (.) updatePage2PreDetails of MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:08,412 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:16:09,476 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:16:09,503 - [INFO] - from application in play-akka.actor.default-dispatcher-55 
+Inside (.) MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:09,503 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+provience BC
+ purchaseprice :23423423234234234
+ downpayment :2423432423423
+ living4Financing  Renter
+ leadin goal null
+ additionalApplicants  null
+
+2016-07-28 15:16:09,503 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+living4Financing   Renter
+
+2016-07-28 15:16:09,503 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+Renter
+
+2016-07-28 15:16:09,503 - [INFO] - from application in play-akka.actor.default-dispatcher-55 
+  inside the setPaymentSourceInOpportunity : 
+
+2016-07-28 15:16:09,504 - [ERROR] - from play in play-akka.actor.default-dispatcher-55 
+Cannot invoke the action, eventually got an error: java.lang.NullPointerException
+
+2016-07-28 15:16:09,512 - [ERROR] - from application in play-akka.actor.default-dispatcher-55 
+
+
+! @70pfilbd0 - Internal server error, for (POST) [/mortgagePage2Pre] ->
+
+play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:316) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838) ~[na:1.8.0_91]
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) ~[na:1.8.0_91]
+	at java.lang.Double.parseDouble(Double.java:538) ~[na:1.8.0_91]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageService.setPaymentSourceInOpportunity(MortgageApplicationPageService.java:231) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2PreService.updatePage2PreDetails(MortgageApplicationPage2PreService.java:43) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2Pre(Mortgage.java:505) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	... 6 common frames omitted
+
+2016-07-28 15:16:13,746 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+(.)Inside mortgagePage2Pre
+
+2016-07-28 15:16:13,750 - [INFO] - from application in play-akka.actor.default-dispatcher-55 
+Inside (.) updatePage2PreDetails of MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:13,751 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:16:24,099 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:16:24,109 - [INFO] - from application in play-akka.actor.default-dispatcher-55 
+Inside (.) MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:24,109 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+provience BC
+ purchaseprice :23423423234234234
+ downpayment :2423432423423234234324
+ living4Financing  Renter
+ leadin goal null
+ additionalApplicants  null
+
+2016-07-28 15:16:24,109 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+living4Financing   Renter
+
+2016-07-28 15:16:24,109 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+Renter
+
+2016-07-28 15:16:24,109 - [INFO] - from application in play-akka.actor.default-dispatcher-55 
+  inside the setPaymentSourceInOpportunity : 
+
+2016-07-28 15:16:24,109 - [ERROR] - from play in play-akka.actor.default-dispatcher-55 
+Cannot invoke the action, eventually got an error: java.lang.NullPointerException
+
+2016-07-28 15:16:24,112 - [ERROR] - from application in play-akka.actor.default-dispatcher-55 
+
+
+! @70pfim72f - Internal server error, for (POST) [/mortgagePage2Pre] ->
+
+play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:316) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838) ~[na:1.8.0_91]
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) ~[na:1.8.0_91]
+	at java.lang.Double.parseDouble(Double.java:538) ~[na:1.8.0_91]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageService.setPaymentSourceInOpportunity(MortgageApplicationPageService.java:231) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2PreService.updatePage2PreDetails(MortgageApplicationPage2PreService.java:43) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2Pre(Mortgage.java:505) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	... 6 common frames omitted
+
+2016-07-28 15:16:43,363 - [DEBUG] - from application in play-akka.actor.default-dispatcher-61 
+(.)Inside mortgagePage2Pre
+
+2016-07-28 15:16:43,366 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
+Inside (.) updatePage2PreDetails of MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:43,366 - [DEBUG] - from application in play-akka.actor.default-dispatcher-61 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:16:53,961 - [DEBUG] - from application in play-akka.actor.default-dispatcher-61 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:16:53,979 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
+Inside (.) MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:53,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-61 
+provience AB
+ purchaseprice :2333
+ downpayment :324
+ living4Financing  OwnerMyself
+ leadin goal null
+ additionalApplicants  null
+
+2016-07-28 15:16:53,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-61 
+living4Financing   OwnerMyself
+
+2016-07-28 15:16:53,979 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
+  inside the setPaymentSourceInOpportunity : 
+
+2016-07-28 15:16:53,980 - [ERROR] - from play in play-akka.actor.default-dispatcher-61 
+Cannot invoke the action, eventually got an error: java.lang.NullPointerException
+
+2016-07-28 15:16:53,981 - [ERROR] - from application in play-akka.actor.default-dispatcher-61 
+
+
+! @70pfinp7b - Internal server error, for (POST) [/mortgagePage2Pre] ->
+
+play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:316) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838) ~[na:1.8.0_91]
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) ~[na:1.8.0_91]
+	at java.lang.Double.parseDouble(Double.java:538) ~[na:1.8.0_91]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageService.setPaymentSourceInOpportunity(MortgageApplicationPageService.java:231) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2PreService.updatePage2PreDetails(MortgageApplicationPage2PreService.java:43) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2Pre(Mortgage.java:505) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	... 6 common frames omitted
+
+2016-07-28 15:16:58,028 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+(.)Inside mortgagePage2Pre
+
+2016-07-28 15:16:58,031 - [INFO] - from application in play-akka.actor.default-dispatcher-63 
+Inside (.) updatePage2PreDetails of MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:58,031 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:16:58,781 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:16:58,800 - [INFO] - from application in play-akka.actor.default-dispatcher-63 
+Inside (.) MortgageApplicationPage2PreService 
+
+2016-07-28 15:16:58,800 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+provience AB
+ purchaseprice :2333
+ downpayment :32423
+ living4Financing  OwnerMyself
+ leadin goal null
+ additionalApplicants  null
+
+2016-07-28 15:16:58,800 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+living4Financing   OwnerMyself
+
+2016-07-28 15:16:58,800 - [INFO] - from application in play-akka.actor.default-dispatcher-63 
+  inside the setPaymentSourceInOpportunity : 
+
+2016-07-28 15:16:58,800 - [ERROR] - from play in play-akka.actor.default-dispatcher-63 
+Cannot invoke the action, eventually got an error: java.lang.NullPointerException
+
+2016-07-28 15:16:58,802 - [ERROR] - from application in play-akka.actor.default-dispatcher-63 
+
+
+! @70pfio6am - Internal server error, for (POST) [/mortgagePage2Pre] ->
+
+play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:316) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.NullPointerException: null
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1838) ~[na:1.8.0_91]
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) ~[na:1.8.0_91]
+	at java.lang.Double.parseDouble(Double.java:538) ~[na:1.8.0_91]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageService.setPaymentSourceInOpportunity(MortgageApplicationPageService.java:231) ~[classes/:na]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage2PreService.updatePage2PreDetails(MortgageApplicationPage2PreService.java:43) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage2Pre(Mortgage.java:505) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$28$$anonfun$apply$28.apply(routes_routing.scala:738) ~[classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	... 6 common frames omitted
+
+2016-07-28 15:19:31,312 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:21:59,780 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:24:14,511 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:26:38,774 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:28:19,642 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:29:06,200 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:29:55,904 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2016-07-28 15:30:25,735 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2016-07-28 15:45:15,276 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2016-07-28 15:46:02,533 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2016-07-28 15:46:20,375 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2016-07-28 15:47:42,321 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2016-07-28 15:49:19,556 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2016-07-28 15:50:03,161 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2016-07-28 15:50:40,245 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2016-07-28 15:52:34,224 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2016-07-28 15:53:07,869 - [INFO] - from play in play-internal-execution-context-13 
+Application started (Dev)
+
+2016-07-28 15:53:27,638 - [DEBUG] - from application in play-akka.actor.default-dispatcher-181 
+(.)inside mortgagePage8page  functionality  
+
+2016-07-28 15:53:27,648 - [DEBUG] - from application in play-akka.actor.default-dispatcher-181 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:53:37,907 - [DEBUG] - from application in play-akka.actor.default-dispatcher-181 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:53:37,932 - [DEBUG] - from application in play-akka.actor.default-dispatcher-181 
+Inside (.) deleteIncome of  MortgageApplicationPageEightService class 
+
+2016-07-28 15:53:37,932 - [ERROR] - from play in play-akka.actor.default-dispatcher-181 
+Cannot invoke the action, eventually got an error: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+
+2016-07-28 15:53:37,935 - [ERROR] - from application in play-akka.actor.default-dispatcher-181 
+
+
+! @70pfnj9em - Internal server error, for (POST) [/mortgagePage8a] ->
+
+play.api.Application$$anon$1: Execution exception[[IndexOutOfBoundsException: Index: 0, Size: 0]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:316) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_91]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_91]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPage8AService.deleteIncome(MortgageApplicationPage8AService.java:84) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage8a(Mortgage.java:932) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$39$$anonfun$apply$39.apply(routes_routing.scala:826) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$39$$anonfun$apply$39.apply(routes_routing.scala:826) ~[classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	... 6 common frames omitted
+
+2016-07-28 15:54:30,887 - [INFO] - from play in play-internal-execution-context-15 
+Application started (Dev)
+
+2016-07-28 15:55:24,626 - [INFO] - from play in play-internal-execution-context-15 
+Application started (Dev)
+
+2016-07-28 15:56:19,148 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+Inside mortgagePage11Properties
+
+2016-07-28 15:56:19,172 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+session Object {referralEmail=guy@visdom.ca, referralName=Billy, isMobile=Desktop, crmLeadId=4593}
+
+2016-07-28 15:56:27,387 - [ERROR] - from com.syml.couchbase.dao.CouchbaseUtil in play-akka.actor.default-dispatcher-189 
+error in connection couchbase connection with hostLsit= [192.168.1.47, 192.168.1.47, 192.168.1.47]
+
+2016-07-28 15:56:28,038 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+COuchbase Data Json Data for Opportunirty ID = 4593
+
+2016-07-28 15:56:28,062 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+Inside (.) deleteProperty of  MortgageApplicationPageElevenService class 
+
+2016-07-28 15:56:28,062 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+Inside (.) deleteApplicantProperty method of PostGresDaoService class 
+
+2016-07-28 15:56:28,066 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+Inside deleteApplicantPropertys(Opportunity opportunity) of PostgresDAO
+
+2016-07-28 15:56:28,067 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+Before creating SESSION_FACTORY null
+
+2016-07-28 15:56:33,431 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+After creating SESSION_FACTORY org.hibernate.internal.SessionFactoryImpl@68671da1
+
+2016-07-28 15:56:33,434 - [DEBUG] - from application in play-akka.actor.default-dispatcher-189 
+Assets information data updated into crm_asset Successfully.
+
+2016-07-28 15:56:33,434 - [ERROR] - from play in play-akka.actor.default-dispatcher-189 
+Cannot invoke the action, eventually got an error: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+
+2016-07-28 15:56:33,436 - [ERROR] - from application in play-akka.actor.default-dispatcher-189 
+
+
+! @70pfo394n - Internal server error, for (POST) [/mortgagePage11] ->
+
+play.api.Application$$anon$1: Execution exception[[IndexOutOfBoundsException: Index: 0, Size: 0]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$4.apply(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:320) [play_2.11-2.3.9.jar:2.3.9]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:316) [play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [akka-actor_2.11-2.3.4.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na]
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_91]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_91]
+	at com.syml.mortgageapplication.impl.MortgageApplicationPageElevenService.deleteProperty(MortgageApplicationPageElevenService.java:425) ~[classes/:na]
+	at controllers.Mortgage.mortgagePage11Properties(Mortgage.java:1246) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$44$$anonfun$apply$44.apply(routes_routing.scala:866) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$44$$anonfun$apply$44.apply(routes_routing.scala:866) ~[classes/:na]
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na]
+	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na]
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[play_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496) ~[play-iteratees_2.11-2.3.9.jar:2.3.9]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na]
+	... 6 common frames omitted
+
+2016-07-28 15:56:45,547 - [INFO] - from play in play-internal-execution-context-15 
+Application started (Dev)
+

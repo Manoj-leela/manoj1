@@ -1,0 +1,374 @@
+@(crmLeadId: String,referralEmail: String,referralName: String,firstName: String,lastName: String,email:String, confirmEmail:String,additionalApplicant: String,lendingGoal:String,coAppFirstName:String,coAppLastName:String,coAppEmail:String)
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mortgage Application Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="_resources/bootstrap.min.css">
+ <link rel="stylesheet" href="@routes.Assets.at("_resources/bootstrap.min.css")">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="shortcut icon" href="@routes.Assets.at("_resources/favicon.ico")">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+<script src=@routes.Assets.at("_resources/bootstrap.min.js")"></script>  
+
+ <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+   <script src="@routes.Assets.at("_resources/jquery-2.1.4.min.js")"></script>
+    <script src="@routes.Assets.at("_resources/jquery.geocomplete.js")"></script>
+    <style type="text/css">
+	.verticalLine {
+	margin-top: 30px;
+	height: 185px;
+    border-left: medium groove #336699;
+	}
+	.inline{
+	display: inline;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function validateForm(){
+	
+	var firstName = document.forms["myForm"]["firstName"].value;
+		if(!firstName){
+		        document.getElementById('input_1101').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    	document.getElementById("input_1101").innerHTML="";
+    	}
+		
+		var lastName = document.forms["myForm"]["lastName"].value;
+		if(!lastName){
+		        document.getElementById('input_1102').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    	document.getElementById("input_1102").innerHTML="";
+    	}
+		 
+		var email = document.forms["myForm"]["email"].value;
+		if(!email){
+		        document.getElementById('input_1103').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    	document.getElementById("input_1103").innerHTML="";
+    	}
+		
+		
+		var re =/^[a-zA-Z0-9\.\_]+\@@{1}[a-zA-Z0-9]+\.\w{2,4}$/;
+	    if(!re.test(email)){
+	    	document.getElementById('input_1103').innerHTML="<span style='color:red'>*Provide valid email.</span>";
+	    	return false;
+	    }else{
+	    	document.getElementById("input_1103").innerHTML="";
+	    }
+		
+		var confirmEmail = document.forms["myForm"]["confirmEmail"].value;
+		if(!confirmEmail){
+		        document.getElementById('input_1104').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        return false;
+		}else{
+    		document.getElementById("input_1104").innerHTML="";
+    	}
+		
+		var re =/^[a-zA-Z0-9\.\_]+\@@{1}[a-zA-Z0-9]+\.\w{2,4}$/;
+	    if(!re.test(confirmEmail)){
+	    	document.getElementById('input_1104').innerHTML="<span style='color:red'>*Provide valid email.</span>";
+	    	return false;
+	    }else{
+	    	document.getElementById("input_1104").innerHTML="";
+	    }
+		
+		if(email != confirmEmail) {
+			document.getElementById('input_1104').innerHTML="<span style='color:red'>*Email mismatch.</span>";
+	        return false;
+        }else{
+        	document.getElementById("input_1104").innerHTML="";
+        }
+		
+		
+		var additionalApplicants = document.forms["myForm"]["additionalApplicants"].value;
+		if(additionalApplicants =='yes'){
+			var adFirstName = document.forms["myForm"]["adFirstName"].value;	
+			if(!adFirstName){
+		    	    document.getElementById('input_1105').innerHTML="<span style='color:red'>*This field is Required.</span>";
+			        return false;
+			}else{
+			document.getElementById("input_1105").innerHTML="";
+			}
+		
+			var adLastName = document.forms["myForm"]["adLastName"].value;
+			if(!adLastName){
+		    	    document.getElementById('input_1106').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        	return false;
+			}else{
+			document.getElementById("input_1106").innerHTML="";
+			}
+		
+			var adEmail = document.forms["myForm"]["adEmail"].value;
+			if(!adEmail){
+		    	    document.getElementById('input_1107').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        	return false;
+			}else{
+			document.getElementById("input_1107").innerHTML="";
+			}
+			
+			var re =/^[a-zA-Z0-9\.\_]+\@@{1}[a-zA-Z0-9]+\.\w{2,4}$/;
+		    if(!re.test(adEmail)){
+		    	document.getElementById('input_1107').innerHTML="<span style='color:red'>*Provide valid email.</span>";
+		    	return false;
+		    }else{
+		    	document.getElementById("input_1107").innerHTML="";
+		    }
+		
+			var adConfirmEmail = document.forms["myForm"]["adConfirmEmail"].value;
+			if(!adConfirmEmail){
+		    	    document.getElementById('input_1108').innerHTML="<span style='color:red'>*This field is Required.</span>";
+		        	return false;
+			}else{
+			document.getElementById("input_1108").innerHTML="";
+			}
+			
+			var re =/^[a-zA-Z0-9\.\_]+\@@{1}[a-zA-Z0-9]+\.\w{2,4}$/;
+		    if(!re.test(adConfirmEmail)){
+		    	document.getElementById('input_1108').innerHTML="<span style='color:red'>*Provide valid email.</span>";
+		    	return false;
+		    }else{
+		    	document.getElementById("input_1108").innerHTML="";
+		    }
+		    if(adEmail != adConfirmEmail) {
+				document.getElementById('input_1108').innerHTML="<span style='color:red'>*Email mismatch.</span>";
+		        return false;
+	        }else{
+	        	document.getElementById("input_1108").innerHTML="";
+	        }
+		}
+		if(!additionalApplicants && additionalApplicants!='yes' || additionalApplicants!='no'){
+	    	    document.getElementById('input_1109').innerHTML="<span style='color:red'>*This field is Required.</span>";
+	        	return false;
+		}else{
+		document.getElementById("input_1109").innerHTML="";
+		}
+		
+		var term = document.forms["myForm"]["term"].value;
+		if(!term){
+    	    document.getElementById('input_201').innerHTML="<span style='color:red'>*This field is Required.</span>";
+        	return false;
+		}else{
+		document.getElementById("input_201").innerHTML="";
+		}
+		
+		return true;	
+	}
+</script>
+
+<!-- <script src="_resources/jquery.maskedinput.min.js" type="text/javascript"></script>
+ -->  
+ <link rel="stylesheet" href="_resources/bootstrap.min.css">
+ <link rel="stylesheet" href="@routes.Assets.at("_resources/bootstrap.min.css")">
+<script src=@routes.Assets.at("_resources/bootstrap.min.js")"></script>  
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/background.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/forms.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/template.css")">
+</head>
+<body>
+<br>
+<br>
+<div style="width: 97%;">
+			
+		<form name="myForm" action="mortgagePage2"  method="POST"  onsubmit="return validateForm()">
+		<input type="hidden" value="@crmLeadId" name="crmLeadId">
+		<input type="hidden" value="@referralEmail" name="referralEmail">
+		<input type="hidden" value="@referralName" name="referralName">
+				<input type="hidden" value="@additionalApplicant" name="additionalApplicants1">
+		
+		<input type="hidden" value="@lendingGoal" name="lendingGoal" >
+		
+		<div class="row"></div>
+		<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 container-bg text-color-blue">
+			
+		<div align="left" style="padding-bottom: 1px; margin-top: 20px; padding-left: 1%">
+			<img alt="Visdom Logo" height="65" width="210"
+				src="@routes.Assets.at("_resources/visdom-logo.png")" />
+		</div>
+		<div style="padding-top: 30px"></div>
+		<div data-ng-app="demoApp"  style="margin-left: 4%">
+		<div ng-controller="DemoController" ng-init="isDisabled = false" >
+		
+		<div class="row" class="col-sm-16" style="padding-left: 0%;">
+			<div class="col-sm-6" style="padding-left: 0%;">
+				<label class="labelfont" style="padding-left: 30%">Applicant</label><br><br>
+				<div class="row">
+					  	<div class="col-md-6"><label class="labelfont">First Name<span style="color: red; font-size: 3">*</span></label><br></div>
+					  	<div class="col-md-6" style="padding-left: 0%;" ><label class="labelfont">Last Name<span style="color: red; font-size: 3">*</span></label></div>
+				</div>
+				
+				<div class="col-sm-6" style="padding-left: 0%;">
+				<div class="map_canvas"></div>
+				<input type="text" name="firstName" placeholder="First Name" class="form-control" value="@firstName">
+									     		<div id="input_1101" style="position: absolute;"></div>
+				</div>
+				<div class="col-sm-6" style="padding-left: 0%;">
+				<input type="text" name="lastName" placeholder="Last Name" class="form-control" value="@lastName">
+      											<div id="input_1102" style="position: absolute;"></div>
+				</div><br><br><br>
+				
+					<div class="col-sm-6" style="padding-left: 0%; width: 100%">
+					<div class="row">
+					  	<div class="col-md-6"><label class="labelfont">Email<span style="color: red; font-size: 3">*</span></label></div>
+					  	<div class="col-md-6" style="padding-left: 0%;" ><label class="labelfont">Confirm Email<span style="color: red; font-size: 3">*</span></label></div>
+					</div>
+					<div class="col-sm-6" style="padding-left: 0%;">
+					<input type="email" placeholder="Email" class="form-control" name="email" id="email" style="width: 103%" onblur="checkEmail(this.value)" value="@email">
+					<div id="input_1103"  style="position: absolute;"></div>
+					</div>
+					<div class="col-sm-6" style="padding-left: 1%;">
+					<input type="email"  name="confirmEmail" placeholder="Confirm Email" class="form-control" ng-blur="calculateDate(this)" style="width: 110%" value="@email">
+					<div id="input_1104"  style="position: absolute;"></div>
+					</div>
+					</div>
+				<br><br><br><br>
+			</div>
+			<div ng-if="additionalApplicant == 'yes'">
+			<div class="clearfix visible-xs"></div>
+			<div class="col-sm-1 verticalLine" style="margin-left:-20px; width: 0%; padding-right: 0px;"></div>
+			<div class="col-sm-6" style="padding-left: 0%;">
+				<label class="labelfont" style="padding-left: 30%">Co Applicant</label><br><br>
+				<div class="row">
+					  		<div class="col-md-6"><label class="labelfont">First Name<span style="color: red; font-size: 3">*</span></label></div>
+					  		<div class="col-md-6" style="padding-left: 0%;" ><label class="labelfont">Last Name<span style="color: red; font-size: 3">*</span></label></div>
+				</div>
+				<div class="col-sm-6" style="padding-left: 0%;">
+				<input type="text" class="form-control" placeholder="First Name" name="adFirstName" style="width: 100%" value="@coAppFirstName">
+				<div id="input_1105"  style="position: absolute;"></div>
+				</div>
+				<div class="col-sm-6" style="padding-left: 0%;">
+				<input type="text" name="adLastName" ng-model="lastName" placeholder="Last Name" class="form-control" ng-blur="calculateDate2(this)" style="width: 100%" value="@coAppLastName">
+				<div id="input_1106"  style="position: absolute;"></div>
+				</div><br><br><br>
+				
+				<div class="col-sm-6" style="padding-left: 0%;  width: 100%">
+				<div class="row">
+					  		<div class="col-md-6"><label class="labelfont">Email<span style="color: red; font-size: 3">*</span></label></div>
+					  		<div class="col-md-6" style="padding-left: 0%;"><label class="labelfont">Confirm Email<span style="color: red; font-size: 3">*</span></label></div>
+				</div>
+				<div class="col-sm-6" style="padding-left: 0%;">
+				
+				<input type="email" placeholder="Email" class="form-control" name="adEmail" style="width: 107%" required value="@coAppEmail">
+				<div id=input_1107  style="position: absolute;"></div>
+				
+				</div>
+				<div class="col-sm-6" style="padding-left: 2%;">
+				<input type="email"  name="adConfirmEmail" placeholder="Confirm Email" class="form-control" ng-blur="calculateDate2(this)" style="width: 112%"  value="@coAppEmail">
+				<div id="input_1108" style="position: absolute;"></div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<label class="labelfont"> Is there an Additional Applicant?<span style="color: red; font-size: 3">*</span></label><br>
+						<div class="btn-group" style="width: 100%;">
+							<label style="width: 20%;" class="btn btn-primary"
+								btn-radio="'yes'" ng-change="change()" ng-model="additionalApplicant" checked="">
+								Yes </label> <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary"
+								btn-radio="'no'" ng-change="change()" ng-model="additionalApplicant">
+								No </label> <br> <br>
+								<div id="input_1109" style="position: absolute;"></div>
+						</div>
+						<br><br>
+						<input type="hidden" name="additionalApplicants"
+						value="{{additionalApplicant}}" ng-required>
+						<label class="labelfont"> What is your current Lending Goal? <span style="color: red; font-size: 3">*</span></label><br>
+		   				<div class="btn-group" style="width: 100%;">
+             				<label style="width: 20%" class="btn btn-primary" btn-radio="'PreApproval'"
+                      			ng-change="change()"  ng-model="newItemType" value=""> Pre-Approval </label>
+                            
+             				<label style="width: 20%" class="btn btn-primary" btn-radio="'Purchase'" 
+                                ng-change="change()"  ng-model="newItemType" value=""> Purchase </label>
+				             <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" btn-radio="'Refinance'"
+                                ng-change="change()"  ng-model="newItemType" value=""> Refinance </label>
+						</div>
+						<div id="input_201"> </div>
+						<input type="hidden" name="term" value="{{newItemType}}" ></input>
+						
+</div>
+					
+						 <div>
+						<div style="float: right;padding-right:30px;">
+							<input type="submit" class="btn btn-primary btn-block"
+								value="Next" style=" width: 110px">
+								<div align="center" id="submiterror">
+									<font color="red"></font>
+								</div>
+						</div>
+						
+					</div>
+					<br>
+		</div>
+						<br>
+						<div class="container" style="width: 70%;">
+						  <div class="progress">
+						    <div class="progress-bar" role="progressbar" aria-valuenow="5%" aria-valuemin="0" aria-valuemax="100" style="width:15%; color: white;">
+						    <label>5% Complete</label>
+						    </div>
+						  </div>
+						</div>
+					 </div>
+					
+				</div>
+				</div>
+				<br>
+				<br>
+</form>
+</div>
+ <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+ 
+    <script src="jquery.geocomplete.js"></script>
+   
+
+	<script type="text/javascript">
+		var app = angular.module("demoApp", [ 'ui.bootstrap' ]);
+
+		app.controller('DemoController', function($scope) {
+			init();
+			function init() {
+				$scope.newItemType = '';
+				$scope.company = "";
+				var additionalApplicants = document.forms["myForm"]["additionalApplicants1"].value;
+	            $scope.data=additionalApplicants;
+				$scope.change = function() {
+					console.log($scope.newItemType)
+				};
+			}
+			
+				
+			$scope.singleModel = 1;
+			var additionalApplicants1 = document.forms["myForm"]["additionalApplicants1"].value;
+	        if(additionalApplicants1 !="" && additionalApplicants1 != null)
+			$scope.additionalApplicant = additionalApplicants1;
+	        
+			var lendingGoal1 = document.forms["myForm"]["lendingGoal"].value;
+	        if(lendingGoal1 !="" && lendingGoal1 != null)
+			$scope.newItemType = lendingGoal1;
+			
+		});
+		
+	</script>
+	<script src="@routes.Assets.at("_resources/jquery.maskedinput.min.js")" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "term": {
+                        "doc.Address_list.name.raw": ""
+                    }
+                }
+            ],
+            "must_not": [ ],
+            "should": [ ]
+        }
+    },
+    "from": 0,
+    "size": 10,
+    "sort": [ ],
+    "aggs": { }
+
+}

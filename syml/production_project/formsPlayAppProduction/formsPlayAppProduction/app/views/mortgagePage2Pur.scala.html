@@ -1,0 +1,329 @@
+@(uniid: String,additionalApplicants: String)
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mortgage Refinance Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="@routes.Assets.at("_resources/favicon.ico")">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js
+"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+ -->
+   <script src="@routes.Assets.at("_resources/jquery-2.1.4.min.js")"></script>
+    <script src="@routes.Assets.at("_resources/jquery.geocomplete.js")"></script>
+    <script type="text/javascript">
+    function validateForm(){
+    		var formatted_address = document.forms["myForm"]["formatted_address"].value;
+	 		if(!formatted_address){
+	 		        document.getElementById('formatted_address11111s').innerHTML="<span style='color:red'>*This field is Required.</span>";
+	 		        return false;
+	 		}else{
+		    	document.getElementById("formatted_address11111s").innerHTML="";
+		    }
+	 		
+	 		var downpayment30=document.forms["myForm"]["downpayment30"].value;
+ 	 		if(!downpayment30){
+ 	 		        document.getElementById('cid_299').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        return false;
+ 	 		}else{
+ 		    	document.getElementById("cid_299").innerHTML="";
+ 		    }
+ 	 		
+ 	 		var bankAccount = document.forms["myForm"]["bankAccount"].value;
+ 	 		var rrsps = document.forms["myForm"]["rrsps"].value;
+	 	 	var investments = document.forms["myForm"]["investments"].value;
+	 	 	var borrowed = document.forms["myForm"]["borrowed"].value;
+	 	 	var saleofProperty = document.forms["myForm"]["saleofProperty"].value;
+	 	 	var gift = document.forms["myForm"]["gift"].value;
+	 	 	var personalCash = document.forms["myForm"]["personalCash"].value;
+ 	 		var existingEquity = document.forms["myForm"]["existingEquity"].value;
+ 	 		var sweatEnquity = document.forms["myForm"]["sweatEnquity"].value;
+ 	 		var retVal=true;
+ 	 		if(!bankAccount && !rrsps && !investments && !borrowed && !saleofProperty && !gift && !personalCash && !existingEquity &&	 !sweatEnquity){
+ 	 		        document.getElementById('widget_settings_27').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        retVal=true;
+ 	 		}else{
+ 		    	document.getElementById("widget_settings_27").innerHTML="";
+ 		    } 
+ 		    
+ 		   var living4Financing=document.forms["myForm"]["living4Financing"].value;
+ 	 		if(!living4Financing){
+ 	 		        document.getElementById('input_203').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        return false;
+ 	 		}else{
+ 		    	document.getElementById("input_203").innerHTML="";
+ 		    }
+ 	 		
+ 			if(living4Financing == "Renter" || living4Financing == "OwnerAndRenter"){
+ 				var rentalAmount=document.forms["myForm"]["rentalAmount"].value;
+ 				if(!rentalAmount){
+ 			        document.getElementById('input_39').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 			        retVal=false;
+ 				}else{
+ 			    	document.getElementById("input_39").innerHTML="";
+ 			    }			
+ 			}	
+ 	 		
+ 	 		var mlsList=document.forms["myForm"]["mlsList"].value;
+ 	 		if(!mlsList){
+ 	 		        document.getElementById('widget_settings_69').innerHTML="<span style='color:red'>*This field is Required.</span>";
+ 	 		        return false;
+ 	 		}else{
+ 		    	document.getElementById("widget_settings_69").innerHTML="";
+ 		    }
+ 	 		
+    	return retVal;
+    }
+    </script>
+    <script>
+    
+      $(function(){
+        $("#geocomplete").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+      });
+    </script>
+     <script>
+      $(function(){
+        $("#geocomplete1").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete1").trigger("geocode");
+        });
+      });
+      
+    </script>
+<!-- <script src="_resources/jquery.maskedinput.min.js" type="text/javascript"></script>
+ -->  <link rel="stylesheet" href="_resources/bootstrap.min.css">
+ <link rel="stylesheet" href="@routes.Assets.at("_resources/bootstrap.min.css")">
+<script src=@routes.Assets.at("_resources/bootstrap.min.js")"></script>  
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/background.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/forms.css")">
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("_resources/template.css")">
+</head>
+<body>
+<br>
+<br>
+<div style="width: 95%">
+
+
+		<form name="myForm" action="mortgagePage2Pur" method="POST" onsubmit="return validateForm()">
+		<input type="hidden" value="@additionalApplicants" name="additionalApplicants">
+		<div class="row"></div>
+		<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-7 container-bg text-color-blue">
+			
+		<div align="left" style="padding-bottom: 1px; margin-top: 20px; padding-left: 3%">
+			<img alt="Visdom Logo" height="65" width="210"
+				src="@routes.Assets.at("_resources/visdom-logo.png")" />
+		</div>
+		<div style="padding-top: 30px"></div>
+		<div data-ng-app="demoApp"  style="margin-left: 5%">
+		<div ng-controller="DemoController" ng-init="isDisabled = false">
+		<div class="map_canvas"></div>
+			      <div class="form-group">
+								<label class="labelfont"> What is the address of the property you are financing? <span
+									style="color: red; font-size: 3; width: 25%;">*</span></label><br> <input
+									id="geocomplete" type="text" name="formatted_address"  style="width: 60%;"
+									class="form-control" placeholder="Enter Location"  ng-required>
+										<div id="formatted_address11111s"> </div>
+		    	</div>
+		 <label class="labelfont">How much is the downpayment?<span style="color: red; font-size: 3">*</span></label><br>
+					<input type="number" style="width: 25%" size="12"  placeholder="e.g 30000"
+					 name="downpayment30" value="" class="form-control" data-type="input-number">		
+	        		 <div id="cid_299"> </div>
+	        		 <br>
+	    	<label class="labelfont">What are all the sources of down payment? <span style="color: red; font-size: 3">*</span></label><br>
+	    	<div class="btn-group" style="width: 100%;">
+                            <label style="width: 20%;" class="btn btn-primary" ng-true-value="Bank-Account" btn-checkbox="'BankAccount'"
+                                ng-change="change()"  ng-model="BankAccount"> Bank Account
+                            </label>
+                             <label style="width: 20%;" class="btn btn-primary" ng-true-value="RRSPS" btn-checkbox="'RRSPS'"
+                                ng-change="change()"  ng-model="RRSPS"> RRSPS
+                            </label>
+                            
+                             <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value ="Investments" btn-checkbox="'Investments'"
+                                ng-change="change()"  ng-model="Investments"> Investments
+                            </label>
+                            <br>
+                            <br>
+                            <label style="width: 20%; border-radius: 5px 0px 0px 5px;" class="btn btn-primary" ng-true-value="Borrowed" btn-checkbox="'Borrowed'"
+                                ng-change="change()"  ng-model="Borrowed"> Borrowed
+                            </label>
+                            <label style="width: 20%;" class="btn btn-primary" ng-true-value="SaleofProperty" btn-checkbox="'SaleofProperty'"
+                                ng-change="change()"  ng-model="SaleofProperty"> Sale of Property
+                            </label>
+                            <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value="Gift" btn-checkbox="'Gift'"
+                                ng-change="change()"  ng-model="Gift"> Gift
+                            </label>
+                           <br> 
+                            <br>
+                            <label style="width: 20%; border-radius: 5px 0px 0px 5px;" class="btn btn-primary" ng-true-value="PersonalCash" btn-checkbox="'PersonalCash'"
+                                ng-change="change()"  ng-model="PersonalCash"> Personal Cash
+                            </label>
+                            <label style="width: 20%;" class="btn btn-primary" ng-true-value="ExistingEquity" btn-checkbox="'ExistingEquity'"
+                                ng-change="change()"  ng-model="ExistingEquity"> Existing Equity
+                            </label>
+                            <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" ng-true-value="SweatEnquity" btn-checkbox="'SweatEnquity'"
+                                ng-change="change()"  ng-model="SweatEnquity"> Sweat Equity
+                            </label>
+                </div>
+                <div id="widget_settings_27" style="position: absolute;"> </div>
+                 <input type="hidden" name="bankAccount" value="{{BankAccount}}" ></input>
+                 <input type="hidden" name="rrsps" value="{{RRSPS}}" ></input>
+                 <input type="hidden" name="investments" value="{{Investments}}" ></input>
+                 <input type="hidden" name="borrowed" value="{{Borrowed}}" ></input>
+                 <input type="hidden" name="saleofProperty" value="{{SaleofProperty}}" ></input>
+                 <input type="hidden" name="gift" value="{{Gift}}" ></input>
+                 <input type="hidden" name="personalCash" value="{{PersonalCash}}" ></input>
+                 <input type="hidden" name="existingEquity" value="{{ExistingEquity}}" ></input>
+                 <input type="hidden" name="sweatEnquity" value="{{SweatEnquity}}" ></input> 
+              <br>
+              <br>   
+             <label class="labelfont">Who will be living in the property you will be financing?<span style="color: red; font-size: 3">*</span></label><br>
+	        	<div class="btn-group" style="width: 100%;">
+              		<label style="width: 20%;" class="btn btn-primary" btn-radio="'OwnerMyself'"
+                      ng-change="change()"  ng-model="newItemType3"> Owner(Myself)
+              		</label>              
+              		<label style="width: 20%;" class="btn btn-primary" btn-radio="'Renter'"
+                       ng-change="change()"  ng-model="newItemType3"> Renter
+		      		</label>
+              		<label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" btn-radio="'OwnerAndRenter'"
+                      ng-change="change()"  ng-model="newItemType3"> Owner & Renter
+              		</label>
+              		<input type="hidden" name="living4Financing" value="{{newItemType3}}" ></input>
+           		</div>
+           		<div id="input_203" style="position: absolute;"> </div>
+           		<br>
+           		<br>
+           		
+           		<div ng-if="newItemType3 == 'OwnerAndRenter' || newItemType3 == 'Renter'">
+						<label class="labelfont">What is the MONTHLY rent you expect to receive from this property?<span style="color: red; font-size: 3">*</span></label><br>
+							<input type="number" style="width: 33%" size="12" id="input_394" placeholder="e.g. 3000"
+								name="rentalAmount" value="" class="form-control" data-type="input-number">		
+	        				<div id="input_39"> </div>
+	        				<br>
+	        	</div>
+           		<label class="labelfont">Is the property MLS listed through a realtor, a private sale directly through owner or a new build directly through a builder? <span style="color: red; font-size: 3">*</span></label><br>
+	        	<div class="btn-group" style="width: 100%;">
+          			
+                            <label style="width: 20%;" class="btn btn-primary" btn-radio="'MLSListed'"
+                                ng-change="change()"  ng-model="newItemType16"> MLS Listed
+                            </label>
+                             <label style="width: 20%;" class="btn btn-primary" btn-radio="'PrivateSale'"
+                                ng-change="change()"  ng-model="newItemType16"> Private Sale
+                            </label>
+                            
+                             <label style="width: 20%; border-radius: 0px 5px 5px 0px;" class="btn btn-primary" btn-radio="'NewBuild'"
+                                ng-change="change()"  ng-model="newItemType16"> New Build
+                            </label>
+                </div>
+                <input type="hidden" name="mlsList" value="{{newItemType16}}" ></input>
+                <div id="widget_settings_69" style="position: absolute;"></div>
+        	</div>
+	       <br>
+	        		<div class="row" style="width: 100%;">
+					  <div class="col-sm-6" style="float: left; padding-left:2%; width: 50%;">
+					  		<a href="mortgageBackPage1" class="btn btn-primary" role="button" style=" width: 50%;">Back</a>
+					  </div>
+					  <div class="col-sm-6" align="right" style="float: right; padding-right:5%; width: 50%;"><input type="submit" class="btn btn-primary btn-block"
+								value="Next" style="width: 50%;">
+							<div align="right" id="submiterror">
+								<font color="red"></font></div>
+					  </div>	
+					</div>
+				
+		</div>
+						<br>
+						<div class="container" style="width: 70%;">
+						  <div class="progress">
+						    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+						    <label>15%</label>
+						    </div>
+						  </div>
+						</div>
+					 </div>
+				</div>
+				</div>
+			
+				
+</form>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $.mask.definitions['~'] = "[+-]";
+
+        $("#phonedatata").mask("999-999-9999");
+    });
+	
+</script>
+
+ <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+ 
+    <script src="jquery.geocomplete.js"></script>
+    <script>
+      $(function(){
+        $("#geocomplete").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+      });
+    </script>
+    
+     <script>
+      $(function(){
+        $("#geocomplete1").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete1").trigger("geocode");
+        });
+      });
+    </script>
+    <script type="text/javascript">
+    var app = angular.module("demoApp", ['ui.bootstrap']);
+
+    app.controller('DemoController', function ($scope) {
+        init();
+        function init() {
+            $scope.newItemType = '';
+            $scope.company="";
+            $scope.change = function () {
+                console.log($scope.newItemType)
+            };
+        }
+    });
+    </script>
+<script src="@routes.Assets.at("_resources/jquery.maskedinput.min.js")" type="text/javascript"></script>
+</body>
+</html>
